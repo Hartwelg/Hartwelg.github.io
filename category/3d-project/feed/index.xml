@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>3D Project &#8211; Gauge M. Hartwell</title>
+	<atom:link href="/category/3d-project/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Email: Gmhartwell16@gmail.com</description>
+	<lastBuildDate>Sat, 23 Jan 2021 03:40:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.6.2</generator>
+
+<image>
+	<url>/wp-content/uploads/2020/10/MyLogo-150x103.png</url>
+	<title>3D Project &#8211; Gauge M. Hartwell</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Modified base for &#8220;Arachnid Task Lamp&#8221;</title>
+		<link>/3d-printed-projects/modified-base-for-arachnid-task-lamp/</link>
+		
+		<dc:creator><![CDATA[hartwelg]]></dc:creator>
+		<pubDate>Sat, 23 Jan 2021 03:40:15 +0000</pubDate>
+				<category><![CDATA[3D Project]]></category>
+		<guid isPermaLink="false">/?page_id=539</guid>
+
+					<description><![CDATA[The original base for the &#8220;Arachnid Task Lamp&#8221; project on Thingiverse was not to my liking, so I designed this<p><a href="/3d-printed-projects/modified-base-for-arachnid-task-lamp/" class="more-link">Continue reading<span class="screen-reader-text">Modified base for &#8220;Arachnid Task Lamp&#8221;</span></a></p>]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:500px;max-height:500px;">
+		<div class="woo3dv-canvas-wrapper">
+			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="500" height="500"></canvas>
+			<div id="woo3dv-file-loading">
+				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+			</div>
+		</div>
+
+		<div id="woo3dv-model-controls">
+		<ul id="woo3dv-model-controls-list">
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleFullScreen();"><img alt="Fullscreen" title="Fullscreen" id="woo3dv-controls-fullscreen" src="/wp-content/plugins/woo-3d-viewer/images/fullscreen.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleWireframe();"><img alt="Wireframe" title="Wireframe" id="woo3dv-controls-wireframe" src="/wp-content/plugins/woo-3d-viewer/images/wireframe.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomIn();"><img alt="Zoom In" title="Zoom In" id="woo3dv-controls-zoomin" src="/wp-content/plugins/woo-3d-viewer/images/zoom_in.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomOut();"><img alt="Zoom Out" title="Zoom Out" id="woo3dv-controls-zoomout" src="/wp-content/plugins/woo-3d-viewer/images/zoom_out.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleRotation();"><img alt="Rotation" title="Rotation" id="woo3dv-controls-rotation" src="/wp-content/plugins/woo-3d-viewer/images/rotation.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvScreenshot();" id="woo3dv-screenshot"><img alt="Screenshot" title="Screenshot" id="woo3dv-controls-screenshot" src="/wp-content/plugins/woo-3d-viewer/images/screenshot.png"></a>
+		<li><a href="#woo3dv-popup1" class="woo3dv-button"><img alt="Help" title="Help" id="woo3dv-controls-help" src="/wp-content/plugins/woo-3d-viewer/images/help.png"></a>
+		</ul>
+	</div>
+	<div id="woo3dv-popup1" class="woo3dv-overlay">
+		<div class="woo3dv-popup">
+			<h2>Controls</h2>
+			<a class="woo3dv-close" href="#">&times;</a>
+			<div class="woo3dv-content">
+				<ul id="woo3dv-controls-help">
+					<li>Rotate with the left mouse button. 					<li>Zoom with the scroll button. 					<li>Adjust camera position with the right mouse button.					<li>Double-click to enter the fullscreen mode.					<li>On mobile devices swipe to rotate.					<li>On mobile devices pinch two fingers together or apart to adjust zoom.				</ul>
+			</div>
+		</div>
+	</div>
+		</div>
+
+	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2021/01/arachnid-lamp-stand.stl">
+	<input type="hidden" id="woo3dv_model_mtl" value="">
+	<input type="hidden" id="woo3dv_model_gif" value="">
+
+
+	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2021/01/" />
+	<input type="hidden" id="woo3dv_model_color" value="0x8e0505">
+	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
+	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
+
+	<input type="hidden" id="woo3dv_model_rotation_x" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
+
+	<input type="hidden" id="woo3dv_show_light_source1" value="">
+	<input type="hidden" id="woo3dv_show_light_source2" value="">
+	<input type="hidden" id="woo3dv_show_light_source3" value="">
+	<input type="hidden" id="woo3dv_show_light_source4" value="">
+	<input type="hidden" id="woo3dv_show_light_source5" value="">
+	<input type="hidden" id="woo3dv_show_light_source6" value="">
+	<input type="hidden" id="woo3dv_show_light_source7" value="">
+	<input type="hidden" id="woo3dv_show_light_source8" value="">
+	<input type="hidden" id="woo3dv_show_light_source9" value="">
+
+
+
+	<input type="hidden" id="woo3dv_camera_position_x" value="76.73138153828862" />
+	<input type="hidden" id="woo3dv_camera_position_y"  value="160.1748046875" />
+	<input type="hidden" id="woo3dv_camera_position_z"  value="-213.12961127113033" />
+	<input type="hidden" id="woo3dv_camera_lookat_x" value="-0.27657835371083206" />
+	<input type="hidden" id="woo3dv_camera_lookat_y"  value="-0.5773502691896257" />
+	<input type="hidden" id="woo3dv_camera_lookat_z"  value="0.7682259309117812" />
+	<input type="hidden" id="woo3dv_controls_target_x" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_y" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_z" value="0" />
+	<input type="hidden" id="woo3dv_offset_z"  value="7.105427357601002e-15" />
+
+
+	<input type="hidden" id="woo3dv_show_fog"  value="0" />
+	<input type="hidden" id="woo3dv_show_grid"  value="on" />
+	<input type="hidden" id="woo3dv_show_ground"  value="on" />
+	<input type="hidden" id="woo3dv_show_shadow"  value="off" />
+	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
+	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
+	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
+	<input type="hidden" id="woo3dv_ground_color"  value="0xc1c1c1" />
+	<input type="hidden" id="woo3dv_auto_rotation"  value="on" />
+
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p>The original base for the &#8220;Arachnid Task Lamp&#8221; project on Thingiverse was not to my liking, so I designed this one to replace it. It uses the same ball joint to mount the rest of the lamp on, but the base uses more basic shapes and takes much less time to print. It supports the weight of four flashlights just as well as the original base does.</p>
+
+
+
+<p><a href="https://www.thingiverse.com/thing:4733838">https://www.thingiverse.com/thing:4733838</a></p>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Brother Knitking Yarn Stay</title>
+		<link>/3d-printed-projects/brother-knitking-yarn-stay/</link>
+		
+		<dc:creator><![CDATA[hartwelg]]></dc:creator>
+		<pubDate>Sat, 23 Jan 2021 03:30:03 +0000</pubDate>
+				<category><![CDATA[3D Project]]></category>
+		<guid isPermaLink="false">/?page_id=529</guid>
+
+					<description><![CDATA[A yarn stay for a Brother Knitking knitting machine my mom owns. It came in the mail without this part,<p><a href="/3d-printed-projects/brother-knitking-yarn-stay/" class="more-link">Continue reading<span class="screen-reader-text">Brother Knitking Yarn Stay</span></a></p>]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:500px;max-height:500px;">
+		<div class="woo3dv-canvas-wrapper">
+			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="500" height="500"></canvas>
+			<div id="woo3dv-file-loading">
+				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+			</div>
+		</div>
+
+		<div id="woo3dv-model-controls">
+		<ul id="woo3dv-model-controls-list">
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleFullScreen();"><img alt="Fullscreen" title="Fullscreen" id="woo3dv-controls-fullscreen" src="/wp-content/plugins/woo-3d-viewer/images/fullscreen.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleWireframe();"><img alt="Wireframe" title="Wireframe" id="woo3dv-controls-wireframe" src="/wp-content/plugins/woo-3d-viewer/images/wireframe.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomIn();"><img alt="Zoom In" title="Zoom In" id="woo3dv-controls-zoomin" src="/wp-content/plugins/woo-3d-viewer/images/zoom_in.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomOut();"><img alt="Zoom Out" title="Zoom Out" id="woo3dv-controls-zoomout" src="/wp-content/plugins/woo-3d-viewer/images/zoom_out.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleRotation();"><img alt="Rotation" title="Rotation" id="woo3dv-controls-rotation" src="/wp-content/plugins/woo-3d-viewer/images/rotation.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvScreenshot();" id="woo3dv-screenshot"><img alt="Screenshot" title="Screenshot" id="woo3dv-controls-screenshot" src="/wp-content/plugins/woo-3d-viewer/images/screenshot.png"></a>
+		<li><a href="#woo3dv-popup1" class="woo3dv-button"><img alt="Help" title="Help" id="woo3dv-controls-help" src="/wp-content/plugins/woo-3d-viewer/images/help.png"></a>
+		</ul>
+	</div>
+	<div id="woo3dv-popup1" class="woo3dv-overlay">
+		<div class="woo3dv-popup">
+			<h2>Controls</h2>
+			<a class="woo3dv-close" href="#">&times;</a>
+			<div class="woo3dv-content">
+				<ul id="woo3dv-controls-help">
+					<li>Rotate with the left mouse button. 					<li>Zoom with the scroll button. 					<li>Adjust camera position with the right mouse button.					<li>Double-click to enter the fullscreen mode.					<li>On mobile devices swipe to rotate.					<li>On mobile devices pinch two fingers together or apart to adjust zoom.				</ul>
+			</div>
+		</div>
+	</div>
+		</div>
+
+	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2021/01/KnittingMachineYarnHolder.stl">
+	<input type="hidden" id="woo3dv_model_mtl" value="">
+	<input type="hidden" id="woo3dv_model_gif" value="">
+
+
+	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2021/01/" />
+	<input type="hidden" id="woo3dv_model_color" value="0x7c1818">
+	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
+	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
+
+	<input type="hidden" id="woo3dv_model_rotation_x" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
+
+	<input type="hidden" id="woo3dv_show_light_source1" value="">
+	<input type="hidden" id="woo3dv_show_light_source2" value="">
+	<input type="hidden" id="woo3dv_show_light_source3" value="">
+	<input type="hidden" id="woo3dv_show_light_source4" value="">
+	<input type="hidden" id="woo3dv_show_light_source5" value="">
+	<input type="hidden" id="woo3dv_show_light_source6" value="">
+	<input type="hidden" id="woo3dv_show_light_source7" value="">
+	<input type="hidden" id="woo3dv_show_light_source8" value="">
+	<input type="hidden" id="woo3dv_show_light_source9" value="">
+
+
+
+	<input type="hidden" id="woo3dv_camera_position_x" value="127.22343949420164" />
+	<input type="hidden" id="woo3dv_camera_position_y"  value="90.20279846191406" />
+	<input type="hidden" id="woo3dv_camera_position_z"  value="-9.342705389049875" />
+	<input type="hidden" id="woo3dv_camera_lookat_x" value="-0.8143038607634876" />
+	<input type="hidden" id="woo3dv_camera_lookat_y"  value="-0.5773502691896258" />
+	<input type="hidden" id="woo3dv_camera_lookat_z"  value="0.05979873754809106" />
+	<input type="hidden" id="woo3dv_controls_target_x" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_y" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_z" value="0" />
+	<input type="hidden" id="woo3dv_offset_z"  value="1.7763568394002505e-15" />
+
+
+	<input type="hidden" id="woo3dv_show_fog"  value="0" />
+	<input type="hidden" id="woo3dv_show_grid"  value="on" />
+	<input type="hidden" id="woo3dv_show_ground"  value="on" />
+	<input type="hidden" id="woo3dv_show_shadow"  value="off" />
+	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
+	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
+	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
+	<input type="hidden" id="woo3dv_ground_color"  value="0xc1c1c1" />
+	<input type="hidden" id="woo3dv_auto_rotation"  value="on" />
+
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p>A yarn stay for a Brother Knitking knitting machine my mom owns. It came in the mail without this part, so I designed this based off of an image I found on Ebay and printed it for her machine.</p>
+
+
+
+<p><a href="https://www.thingiverse.com/thing:4733844">https://www.thingiverse.com/thing:4733844</a></p>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Basic Sandpaper Stick</title>
+		<link>/3d-printed-projects/basic-sandpaper-stick/</link>
+		
+		<dc:creator><![CDATA[hartwelg]]></dc:creator>
+		<pubDate>Sat, 23 Jan 2021 03:28:14 +0000</pubDate>
+				<category><![CDATA[3D Project]]></category>
+		<guid isPermaLink="false">/?page_id=525</guid>
+
+					<description><![CDATA[A small tool I made for finishing small projects. It has a slot in the side to accept the edge<p><a href="/3d-printed-projects/basic-sandpaper-stick/" class="more-link">Continue reading<span class="screen-reader-text">Basic Sandpaper Stick</span></a></p>]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:500px;max-height:500px;">
+		<div class="woo3dv-canvas-wrapper">
+			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="500" height="500"></canvas>
+			<div id="woo3dv-file-loading">
+				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+			</div>
+		</div>
+
+		<div id="woo3dv-model-controls">
+		<ul id="woo3dv-model-controls-list">
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleFullScreen();"><img alt="Fullscreen" title="Fullscreen" id="woo3dv-controls-fullscreen" src="/wp-content/plugins/woo-3d-viewer/images/fullscreen.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleWireframe();"><img alt="Wireframe" title="Wireframe" id="woo3dv-controls-wireframe" src="/wp-content/plugins/woo-3d-viewer/images/wireframe.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomIn();"><img alt="Zoom In" title="Zoom In" id="woo3dv-controls-zoomin" src="/wp-content/plugins/woo-3d-viewer/images/zoom_in.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomOut();"><img alt="Zoom Out" title="Zoom Out" id="woo3dv-controls-zoomout" src="/wp-content/plugins/woo-3d-viewer/images/zoom_out.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleRotation();"><img alt="Rotation" title="Rotation" id="woo3dv-controls-rotation" src="/wp-content/plugins/woo-3d-viewer/images/rotation.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvScreenshot();" id="woo3dv-screenshot"><img alt="Screenshot" title="Screenshot" id="woo3dv-controls-screenshot" src="/wp-content/plugins/woo-3d-viewer/images/screenshot.png"></a>
+		<li><a href="#woo3dv-popup1" class="woo3dv-button"><img alt="Help" title="Help" id="woo3dv-controls-help" src="/wp-content/plugins/woo-3d-viewer/images/help.png"></a>
+		</ul>
+	</div>
+	<div id="woo3dv-popup1" class="woo3dv-overlay">
+		<div class="woo3dv-popup">
+			<h2>Controls</h2>
+			<a class="woo3dv-close" href="#">&times;</a>
+			<div class="woo3dv-content">
+				<ul id="woo3dv-controls-help">
+					<li>Rotate with the left mouse button. 					<li>Zoom with the scroll button. 					<li>Adjust camera position with the right mouse button.					<li>Double-click to enter the fullscreen mode.					<li>On mobile devices swipe to rotate.					<li>On mobile devices pinch two fingers together or apart to adjust zoom.				</ul>
+			</div>
+		</div>
+	</div>
+		</div>
+
+	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2021/01/Sandpaper-stick.stl">
+	<input type="hidden" id="woo3dv_model_mtl" value="">
+	<input type="hidden" id="woo3dv_model_gif" value="">
+
+
+	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2021/01/" />
+	<input type="hidden" id="woo3dv_model_color" value="0xf20000">
+	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
+	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
+
+	<input type="hidden" id="woo3dv_model_rotation_x" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
+
+	<input type="hidden" id="woo3dv_show_light_source1" value="">
+	<input type="hidden" id="woo3dv_show_light_source2" value="">
+	<input type="hidden" id="woo3dv_show_light_source3" value="">
+	<input type="hidden" id="woo3dv_show_light_source4" value="">
+	<input type="hidden" id="woo3dv_show_light_source5" value="">
+	<input type="hidden" id="woo3dv_show_light_source6" value="">
+	<input type="hidden" id="woo3dv_show_light_source7" value="">
+	<input type="hidden" id="woo3dv_show_light_source8" value="">
+	<input type="hidden" id="woo3dv_show_light_source9" value="">
+
+
+
+	<input type="hidden" id="woo3dv_camera_position_x" value="56.45405432258657" />
+	<input type="hidden" id="woo3dv_camera_position_y"  value="192" />
+	<input type="hidden" id="woo3dv_camera_position_z"  value="-265.5954437684173" />
+	<input type="hidden" id="woo3dv_camera_lookat_x" value="-0.16975918468745368" />
+	<input type="hidden" id="woo3dv_camera_lookat_y"  value="-0.5773502691896257" />
+	<input type="hidden" id="woo3dv_camera_lookat_z"  value="0.7986541716418427" />
+	<input type="hidden" id="woo3dv_controls_target_x" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_y" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_z" value="0" />
+	<input type="hidden" id="woo3dv_offset_z"  value="1.7763568394002505e-14" />
+
+
+	<input type="hidden" id="woo3dv_show_fog"  value="0" />
+	<input type="hidden" id="woo3dv_show_grid"  value="on" />
+	<input type="hidden" id="woo3dv_show_ground"  value="on" />
+	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
+	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
+	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
+	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
+	<input type="hidden" id="woo3dv_ground_color"  value="0xc1c1c1" />
+	<input type="hidden" id="woo3dv_auto_rotation"  value="on" />
+
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p>A small tool I made for finishing small projects. It has a slot in the side to accept the edge of a piece of sandpaper, then the paper is wrapped around the stick to make a sanding block.</p>
+
+
+
+<p><a href="https://www.thingiverse.com/thing:4733853">https://www.thingiverse.com/thing:4733853</a></p>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Display Case</title>
+		<link>/workshop-projects/display-case/</link>
+		
+		<dc:creator><![CDATA[hartwelg]]></dc:creator>
+		<pubDate>Wed, 09 Dec 2020 11:09:48 +0000</pubDate>
+				<category><![CDATA[3D Project]]></category>
+		<guid isPermaLink="false">/?page_id=363</guid>
+
+					<description><![CDATA[I made this after my first dog passed. It contains his collar, a picture of him and a mold of<p><a href="/workshop-projects/display-case/" class="more-link">Continue reading<span class="screen-reader-text">Display Case</span></a></p>]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:800px;max-height:800px;">
+		<div class="woo3dv-canvas-wrapper">
+			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="800" height="800"></canvas>
+			<div id="woo3dv-file-loading">
+				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+			</div>
+		</div>
+
+		<div id="woo3dv-model-controls">
+		<ul id="woo3dv-model-controls-list">
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleFullScreen();"><img alt="Fullscreen" title="Fullscreen" id="woo3dv-controls-fullscreen" src="/wp-content/plugins/woo-3d-viewer/images/fullscreen.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleWireframe();"><img alt="Wireframe" title="Wireframe" id="woo3dv-controls-wireframe" src="/wp-content/plugins/woo-3d-viewer/images/wireframe.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomIn();"><img alt="Zoom In" title="Zoom In" id="woo3dv-controls-zoomin" src="/wp-content/plugins/woo-3d-viewer/images/zoom_in.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomOut();"><img alt="Zoom Out" title="Zoom Out" id="woo3dv-controls-zoomout" src="/wp-content/plugins/woo-3d-viewer/images/zoom_out.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleRotation();"><img alt="Rotation" title="Rotation" id="woo3dv-controls-rotation" src="/wp-content/plugins/woo-3d-viewer/images/rotation.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvScreenshot();" id="woo3dv-screenshot"><img alt="Screenshot" title="Screenshot" id="woo3dv-controls-screenshot" src="/wp-content/plugins/woo-3d-viewer/images/screenshot.png"></a>
+		<li><a href="#woo3dv-popup1" class="woo3dv-button"><img alt="Help" title="Help" id="woo3dv-controls-help" src="/wp-content/plugins/woo-3d-viewer/images/help.png"></a>
+		</ul>
+	</div>
+	<div id="woo3dv-popup1" class="woo3dv-overlay">
+		<div class="woo3dv-popup">
+			<h2>Controls</h2>
+			<a class="woo3dv-close" href="#">&times;</a>
+			<div class="woo3dv-content">
+				<ul id="woo3dv-controls-help">
+					<li>Rotate with the left mouse button. 					<li>Zoom with the scroll button. 					<li>Adjust camera position with the right mouse button.					<li>Double-click to enter the fullscreen mode.					<li>On mobile devices swipe to rotate.					<li>On mobile devices pinch two fingers together or apart to adjust zoom.				</ul>
+			</div>
+		</div>
+	</div>
+		</div>
+
+	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/12/1607512293_tinker.obj">
+	<input type="hidden" id="woo3dv_model_mtl" value="1607512293_obj.mtl">
+	<input type="hidden" id="woo3dv_model_gif" value="">
+
+
+	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/12/" />
+	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
+	<input type="hidden" id="woo3dv_model_shininess" value="wood">
+	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
+
+	<input type="hidden" id="woo3dv_model_rotation_x" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
+
+	<input type="hidden" id="woo3dv_show_light_source1" value="">
+	<input type="hidden" id="woo3dv_show_light_source2" value="">
+	<input type="hidden" id="woo3dv_show_light_source3" value="">
+	<input type="hidden" id="woo3dv_show_light_source4" value="">
+	<input type="hidden" id="woo3dv_show_light_source5" value="">
+	<input type="hidden" id="woo3dv_show_light_source6" value="">
+	<input type="hidden" id="woo3dv_show_light_source7" value="">
+	<input type="hidden" id="woo3dv_show_light_source8" value="">
+	<input type="hidden" id="woo3dv_show_light_source9" value="">
+
+
+
+	<input type="hidden" id="woo3dv_camera_position_x" value="559.7703472763098" />
+	<input type="hidden" id="woo3dv_camera_position_y"  value="279.02791104966036" />
+	<input type="hidden" id="woo3dv_camera_position_z"  value="471.19463600575455" />
+	<input type="hidden" id="woo3dv_camera_lookat_x" value="-0.7669155686102587" />
+	<input type="hidden" id="woo3dv_camera_lookat_y"  value="-0.11285539121794855" />
+	<input type="hidden" id="woo3dv_camera_lookat_z"  value="-0.6317469202902756" />
+	<input type="hidden" id="woo3dv_controls_target_x" value="13.148103267958488" />
+	<input type="hidden" id="woo3dv_controls_target_y" value="198.58976411285525" />
+	<input type="hidden" id="woo3dv_controls_target_z" value="20.914405236403177" />
+	<input type="hidden" id="woo3dv_offset_z"  value="23.824500000104337" />
+
+
+	<input type="hidden" id="woo3dv_show_fog"  value="0" />
+	<input type="hidden" id="woo3dv_show_grid"  value="on" />
+	<input type="hidden" id="woo3dv_show_ground"  value="on" />
+	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
+	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
+	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
+	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
+	<input type="hidden" id="woo3dv_ground_color"  value="0xc1c1c1" />
+	<input type="hidden" id="woo3dv_auto_rotation"  value="on" />
+
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p>I made this after my first dog passed. It contains his collar, a picture of him and a mold of his pawprint, cast in clay.</p>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Sharpening Stone Box</title>
+		<link>/workshop-projects/sharpening-stone-box/</link>
+		
+		<dc:creator><![CDATA[hartwelg]]></dc:creator>
+		<pubDate>Wed, 09 Dec 2020 09:34:17 +0000</pubDate>
+				<category><![CDATA[3D Project]]></category>
+		<guid isPermaLink="false">/?page_id=352</guid>
+
+					<description><![CDATA[This is a model of a box I made for one of my sharpening stones. I made this by copying<p><a href="/workshop-projects/sharpening-stone-box/" class="more-link">Continue reading<span class="screen-reader-text">Sharpening Stone Box</span></a></p>]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:800px;max-height:800px;">
+		<div class="woo3dv-canvas-wrapper">
+			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="800" height="800"></canvas>
+			<div id="woo3dv-file-loading">
+				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+			</div>
+		</div>
+
+		<div id="woo3dv-model-controls">
+		<ul id="woo3dv-model-controls-list">
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleFullScreen();"><img alt="Fullscreen" title="Fullscreen" id="woo3dv-controls-fullscreen" src="/wp-content/plugins/woo-3d-viewer/images/fullscreen.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleWireframe();"><img alt="Wireframe" title="Wireframe" id="woo3dv-controls-wireframe" src="/wp-content/plugins/woo-3d-viewer/images/wireframe.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomIn();"><img alt="Zoom In" title="Zoom In" id="woo3dv-controls-zoomin" src="/wp-content/plugins/woo-3d-viewer/images/zoom_in.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomOut();"><img alt="Zoom Out" title="Zoom Out" id="woo3dv-controls-zoomout" src="/wp-content/plugins/woo-3d-viewer/images/zoom_out.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleRotation();"><img alt="Rotation" title="Rotation" id="woo3dv-controls-rotation" src="/wp-content/plugins/woo-3d-viewer/images/rotation.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvScreenshot();" id="woo3dv-screenshot"><img alt="Screenshot" title="Screenshot" id="woo3dv-controls-screenshot" src="/wp-content/plugins/woo-3d-viewer/images/screenshot.png"></a>
+		<li><a href="#woo3dv-popup1" class="woo3dv-button"><img alt="Help" title="Help" id="woo3dv-controls-help" src="/wp-content/plugins/woo-3d-viewer/images/help.png"></a>
+		</ul>
+	</div>
+	<div id="woo3dv-popup1" class="woo3dv-overlay">
+		<div class="woo3dv-popup">
+			<h2>Controls</h2>
+			<a class="woo3dv-close" href="#">&times;</a>
+			<div class="woo3dv-content">
+				<ul id="woo3dv-controls-help">
+					<li>Rotate with the left mouse button. 					<li>Zoom with the scroll button. 					<li>Adjust camera position with the right mouse button.					<li>Double-click to enter the fullscreen mode.					<li>On mobile devices swipe to rotate.					<li>On mobile devices pinch two fingers together or apart to adjust zoom.				</ul>
+			</div>
+		</div>
+	</div>
+		</div>
+
+	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/12/Sharpening-Stone-Box.stl">
+	<input type="hidden" id="woo3dv_model_mtl" value="">
+	<input type="hidden" id="woo3dv_model_gif" value="">
+
+
+	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/12/" />
+	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
+	<input type="hidden" id="woo3dv_model_shininess" value="wood">
+	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
+
+	<input type="hidden" id="woo3dv_model_rotation_x" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
+
+	<input type="hidden" id="woo3dv_show_light_source1" value="">
+	<input type="hidden" id="woo3dv_show_light_source2" value="">
+	<input type="hidden" id="woo3dv_show_light_source3" value="">
+	<input type="hidden" id="woo3dv_show_light_source4" value="">
+	<input type="hidden" id="woo3dv_show_light_source5" value="">
+	<input type="hidden" id="woo3dv_show_light_source6" value="">
+	<input type="hidden" id="woo3dv_show_light_source7" value="">
+	<input type="hidden" id="woo3dv_show_light_source8" value="">
+	<input type="hidden" id="woo3dv_show_light_source9" value="">
+
+
+
+	<input type="hidden" id="woo3dv_camera_position_x" value="8.7730565579213" />
+	<input type="hidden" id="woo3dv_camera_position_y"  value="9.270967020320887" />
+	<input type="hidden" id="woo3dv_camera_position_z"  value="-9.743466406534646" />
+	<input type="hidden" id="woo3dv_camera_lookat_x" value="-0.5463428522860133" />
+	<input type="hidden" id="woo3dv_camera_lookat_y"  value="-0.5773502691896258" />
+	<input type="hidden" id="woo3dv_camera_lookat_z"  value="0.6067752091365057" />
+	<input type="hidden" id="woo3dv_controls_target_x" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_y" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_z" value="0" />
+	<input type="hidden" id="woo3dv_offset_z"  value="2.6645352591003757e-15" />
+
+
+	<input type="hidden" id="woo3dv_show_fog"  value="0" />
+	<input type="hidden" id="woo3dv_show_grid"  value="on" />
+	<input type="hidden" id="woo3dv_show_ground"  value="on" />
+	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
+	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
+	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
+	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
+	<input type="hidden" id="woo3dv_ground_color"  value="0xc1c1c1" />
+	<input type="hidden" id="woo3dv_auto_rotation"  value="on" />
+
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p>This is a model of a box I made for one of my sharpening stones. I made this by copying the dimensions and overall look of another sharpening stone box I had already. It now holds my coarse-grit stone.</p>
+</div>
+</div>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nightstand</title>
+		<link>/workshop-projects/nightstand/</link>
+		
+		<dc:creator><![CDATA[hartwelg]]></dc:creator>
+		<pubDate>Fri, 13 Nov 2020 05:22:48 +0000</pubDate>
+				<category><![CDATA[3D Project]]></category>
+		<guid isPermaLink="false">/?page_id=245</guid>
+
+					<description><![CDATA[This is a model of my nightstand. I built this in my workshop in the span of about 4 hours<p><a href="/workshop-projects/nightstand/" class="more-link">Continue reading<span class="screen-reader-text">Nightstand</span></a></p>]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:750px;max-height:750px;">
+		<div class="woo3dv-canvas-wrapper">
+			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="750" height="750"></canvas>
+			<div id="woo3dv-file-loading">
+				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+			</div>
+		</div>
+
+		<div id="woo3dv-model-controls">
+		<ul id="woo3dv-model-controls-list">
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleFullScreen();"><img alt="Fullscreen" title="Fullscreen" id="woo3dv-controls-fullscreen" src="/wp-content/plugins/woo-3d-viewer/images/fullscreen.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleWireframe();"><img alt="Wireframe" title="Wireframe" id="woo3dv-controls-wireframe" src="/wp-content/plugins/woo-3d-viewer/images/wireframe.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomIn();"><img alt="Zoom In" title="Zoom In" id="woo3dv-controls-zoomin" src="/wp-content/plugins/woo-3d-viewer/images/zoom_in.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomOut();"><img alt="Zoom Out" title="Zoom Out" id="woo3dv-controls-zoomout" src="/wp-content/plugins/woo-3d-viewer/images/zoom_out.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleRotation();"><img alt="Rotation" title="Rotation" id="woo3dv-controls-rotation" src="/wp-content/plugins/woo-3d-viewer/images/rotation.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvScreenshot();" id="woo3dv-screenshot"><img alt="Screenshot" title="Screenshot" id="woo3dv-controls-screenshot" src="/wp-content/plugins/woo-3d-viewer/images/screenshot.png"></a>
+		<li><a href="#woo3dv-popup1" class="woo3dv-button"><img alt="Help" title="Help" id="woo3dv-controls-help" src="/wp-content/plugins/woo-3d-viewer/images/help.png"></a>
+		</ul>
+	</div>
+	<div id="woo3dv-popup1" class="woo3dv-overlay">
+		<div class="woo3dv-popup">
+			<h2>Controls</h2>
+			<a class="woo3dv-close" href="#">&times;</a>
+			<div class="woo3dv-content">
+				<ul id="woo3dv-controls-help">
+					<li>Rotate with the left mouse button. 					<li>Zoom with the scroll button. 					<li>Adjust camera position with the right mouse button.					<li>Double-click to enter the fullscreen mode.					<li>On mobile devices swipe to rotate.					<li>On mobile devices pinch two fingers together or apart to adjust zoom.				</ul>
+			</div>
+		</div>
+	</div>
+		</div>
+
+	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/11/Nightstand1.stl">
+	<input type="hidden" id="woo3dv_model_mtl" value="">
+	<input type="hidden" id="woo3dv_model_gif" value="">
+
+
+	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/11/" />
+	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
+	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
+	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
+
+	<input type="hidden" id="woo3dv_model_rotation_x" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
+
+	<input type="hidden" id="woo3dv_show_light_source1" value="">
+	<input type="hidden" id="woo3dv_show_light_source2" value="">
+	<input type="hidden" id="woo3dv_show_light_source3" value="">
+	<input type="hidden" id="woo3dv_show_light_source4" value="">
+	<input type="hidden" id="woo3dv_show_light_source5" value="">
+	<input type="hidden" id="woo3dv_show_light_source6" value="">
+	<input type="hidden" id="woo3dv_show_light_source7" value="">
+	<input type="hidden" id="woo3dv_show_light_source8" value="">
+	<input type="hidden" id="woo3dv_show_light_source9" value="">
+
+
+
+	<input type="hidden" id="woo3dv_camera_position_x" value="41.67491856380045" />
+	<input type="hidden" id="woo3dv_camera_position_y"  value="29.999999999999996" />
+	<input type="hidden" id="woo3dv_camera_position_z"  value="-7.949915892674745" />
+	<input type="hidden" id="woo3dv_camera_lookat_x" value="-0.802034181708864" />
+	<input type="hidden" id="woo3dv_camera_lookat_y"  value="-0.5773502691896257" />
+	<input type="hidden" id="woo3dv_camera_lookat_z"  value="0.1529962026890215" />
+	<input type="hidden" id="woo3dv_controls_target_x" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_y" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_z" value="0" />
+	<input type="hidden" id="woo3dv_offset_z"  value="8.881784197001252e-15" />
+
+
+	<input type="hidden" id="woo3dv_show_fog"  value="0" />
+	<input type="hidden" id="woo3dv_show_grid"  value="on" />
+	<input type="hidden" id="woo3dv_show_ground"  value="on" />
+	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
+	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
+	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
+	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
+	<input type="hidden" id="woo3dv_ground_color"  value="0xc1c1c1" />
+	<input type="hidden" id="woo3dv_auto_rotation"  value="on" />
+
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p>This is a model of my nightstand. I built this in my workshop in the span of about 4 hours because I needed a nightstand.</p>
+</div>
+</div>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Box</title>
+		<link>/workshop-projects/box/</link>
+		
+		<dc:creator><![CDATA[hartwelg]]></dc:creator>
+		<pubDate>Fri, 13 Nov 2020 05:21:13 +0000</pubDate>
+				<category><![CDATA[3D Project]]></category>
+		<guid isPermaLink="false">/?page_id=241</guid>
+
+					<description><![CDATA[This is a model of a box I made as a commission for a friend. I made two of these<p><a href="/workshop-projects/box/" class="more-link">Continue reading<span class="screen-reader-text">Box</span></a></p>]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:750px;max-height:750px;">
+		<div class="woo3dv-canvas-wrapper">
+			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="750" height="750"></canvas>
+			<div id="woo3dv-file-loading">
+				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+			</div>
+		</div>
+
+		<div id="woo3dv-model-controls">
+		<ul id="woo3dv-model-controls-list">
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleFullScreen();"><img alt="Fullscreen" title="Fullscreen" id="woo3dv-controls-fullscreen" src="/wp-content/plugins/woo-3d-viewer/images/fullscreen.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleWireframe();"><img alt="Wireframe" title="Wireframe" id="woo3dv-controls-wireframe" src="/wp-content/plugins/woo-3d-viewer/images/wireframe.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomIn();"><img alt="Zoom In" title="Zoom In" id="woo3dv-controls-zoomin" src="/wp-content/plugins/woo-3d-viewer/images/zoom_in.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvZoomOut();"><img alt="Zoom Out" title="Zoom Out" id="woo3dv-controls-zoomout" src="/wp-content/plugins/woo-3d-viewer/images/zoom_out.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvToggleRotation();"><img alt="Rotation" title="Rotation" id="woo3dv-controls-rotation" src="/wp-content/plugins/woo-3d-viewer/images/rotation.png"></a>
+		<li><a href="javascript:void(0)" onclick="woo3dvScreenshot();" id="woo3dv-screenshot"><img alt="Screenshot" title="Screenshot" id="woo3dv-controls-screenshot" src="/wp-content/plugins/woo-3d-viewer/images/screenshot.png"></a>
+		<li><a href="#woo3dv-popup1" class="woo3dv-button"><img alt="Help" title="Help" id="woo3dv-controls-help" src="/wp-content/plugins/woo-3d-viewer/images/help.png"></a>
+		</ul>
+	</div>
+	<div id="woo3dv-popup1" class="woo3dv-overlay">
+		<div class="woo3dv-popup">
+			<h2>Controls</h2>
+			<a class="woo3dv-close" href="#">&times;</a>
+			<div class="woo3dv-content">
+				<ul id="woo3dv-controls-help">
+					<li>Rotate with the left mouse button. 					<li>Zoom with the scroll button. 					<li>Adjust camera position with the right mouse button.					<li>Double-click to enter the fullscreen mode.					<li>On mobile devices swipe to rotate.					<li>On mobile devices pinch two fingers together or apart to adjust zoom.				</ul>
+			</div>
+		</div>
+	</div>
+		</div>
+
+	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/11/AnyConv.com__Box-with-lid.obj">
+	<input type="hidden" id="woo3dv_model_mtl" value="">
+	<input type="hidden" id="woo3dv_model_gif" value="">
+
+
+	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/11/" />
+	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
+	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
+	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
+
+	<input type="hidden" id="woo3dv_model_rotation_x" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
+	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
+
+	<input type="hidden" id="woo3dv_show_light_source1" value="">
+	<input type="hidden" id="woo3dv_show_light_source2" value="">
+	<input type="hidden" id="woo3dv_show_light_source3" value="">
+	<input type="hidden" id="woo3dv_show_light_source4" value="">
+	<input type="hidden" id="woo3dv_show_light_source5" value="">
+	<input type="hidden" id="woo3dv_show_light_source6" value="">
+	<input type="hidden" id="woo3dv_show_light_source7" value="">
+	<input type="hidden" id="woo3dv_show_light_source8" value="">
+	<input type="hidden" id="woo3dv_show_light_source9" value="">
+
+
+
+	<input type="hidden" id="woo3dv_camera_position_x" value="-19.094710463237863" />
+	<input type="hidden" id="woo3dv_camera_position_y"  value="18" />
+	<input type="hidden" id="woo3dv_camera_position_z"  value="-16.834251760179765" />
+	<input type="hidden" id="woo3dv_camera_lookat_x" value="0.612463123669352" />
+	<input type="hidden" id="woo3dv_camera_lookat_y"  value="-0.5773502691896253" />
+	<input type="hidden" id="woo3dv_camera_lookat_z"  value="0.5399588769636511" />
+	<input type="hidden" id="woo3dv_controls_target_x" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_y" value="0" />
+	<input type="hidden" id="woo3dv_controls_target_z" value="0" />
+	<input type="hidden" id="woo3dv_offset_z"  value="4" />
+
+
+	<input type="hidden" id="woo3dv_show_fog"  value="0" />
+	<input type="hidden" id="woo3dv_show_grid"  value="on" />
+	<input type="hidden" id="woo3dv_show_ground"  value="on" />
+	<input type="hidden" id="woo3dv_show_shadow"  value="off" />
+	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
+	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
+	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
+	<input type="hidden" id="woo3dv_ground_color"  value="0xc1c1c1" />
+	<input type="hidden" id="woo3dv_auto_rotation"  value="on" />
+
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:33.33%">
+<p>This is a model of a box I made as a commission for a friend. I made two of these for them and they live on a bookshelf in their house. Both boxes are painted black and measure 15&#8243;Wx12&#8243;Lx6&#8243;H.</p>
+</div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
