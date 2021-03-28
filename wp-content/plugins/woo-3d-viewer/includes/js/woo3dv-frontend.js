@@ -33,6 +33,7 @@ function woo3dvInit3D() {
 
 	jQuery('.woo3dv-view3d-button-wrapper').hide();
 	jQuery('.woo3dv-main-image').hide();
+	jQuery('.woo3dv-thumbnail').hide();
 	jQuery('#woo3dv-viewer').show();
 
 	//workaround for shortcode pages
@@ -559,7 +560,7 @@ function woo3dvModelOnLoad(object) {
 		//woo3dvLoadVariationOptions(variation_id);
 	}
 
-	if (!isNaN(woo3dv.offset_z) && parseInt(woo3dv.offset_z)!=0) {
+	if (!isNaN(woo3dv.offset_z) && parseFloat(woo3dv.offset_z)!=0) {
 		if (woo3dv.object.type=='Scene' || woo3dv.object.type=='Group') {
 			woo3dv.object.position.y = woo3dv.offset_z;
 		}
@@ -718,8 +719,8 @@ function woo3dvCreateModel(object, geometry, material, shading) {
 		}
 
 		woo3dv.object.position.set( 0, 0, 0 );
-		woo3dv.object.rotation.z = 90 * Math.PI/180;
-		woo3dv.object.rotation.x = -90 * Math.PI/180;
+		woo3dv.object.rotation.z = parseFloat(woo3dv.default_rotation_y) * Math.PI/180;
+		woo3dv.object.rotation.x = parseFloat(woo3dv.default_rotation_x) * Math.PI/180;
 		woo3dv.object.name = "object";
 		woo3dv.initial_rotation_x = woo3dv.object.rotation.x;
 		woo3dv.initial_rotation_y = woo3dv.object.rotation.y;
@@ -738,8 +739,8 @@ function woo3dvCreateModel(object, geometry, material, shading) {
 
 		woo3dv.object.position.set( 0, 0, 0 );
 
-		woo3dv.object.rotation.z = 90 * Math.PI/180;
-		woo3dv.object.rotation.x = -90 * Math.PI/180;
+		woo3dv.object.rotation.z = parseFloat(woo3dv.default_rotation_y) * Math.PI/180;
+		woo3dv.object.rotation.x = parseFloat(woo3dv.default_rotation_x) * Math.PI/180;
 		woo3dv.object.name = "object";
 
 		woo3dv.initial_rotation_x = woo3dv.object.rotation.x;
@@ -767,8 +768,8 @@ function woo3dvCreateModel(object, geometry, material, shading) {
 	else {
 //		woo3dv.model_mesh.position.set( 0, (woo3dv.boundingBox.max.y - woo3dv.boundingBox.min.y)/2, 0 );
 		woo3dv.model_mesh.position.set( 0, 0, 0 );
-		woo3dv.model_mesh.rotation.z = 90 * Math.PI/180;
-		woo3dv.model_mesh.rotation.x = -90 * Math.PI/180;
+		woo3dv.model_mesh.rotation.z = parseFloat(woo3dv.default_rotation_y) * Math.PI/180;
+		woo3dv.model_mesh.rotation.x = parseFloat(woo3dv.default_rotation_x) * Math.PI/180;
 		woo3dv.model_mesh.name = "model";
 		woo3dv.initial_rotation_x = woo3dv.model_mesh.rotation.x;
 		woo3dv.initial_rotation_y = woo3dv.model_mesh.rotation.y;
@@ -1045,7 +1046,7 @@ function woo3dvRotateModel(axis, degree) {
 		}
 	}
 
-	if (!isNaN(woo3dv.offset_z) && parseInt(woo3dv.offset_z)!=0) {
+	if (!isNaN(woo3dv.offset_z) && parseFloat(woo3dv.offset_z)!=0) {
 		if (woo3dv.object.type=='Scene' || woo3dv.object.type=='Group') {
 			woo3dv.object.position.y = woo3dv.offset_z;
 		}
