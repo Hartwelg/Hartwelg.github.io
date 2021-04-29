@@ -34,17 +34,44 @@ Description: Used to style Gutenberg Blocks.
 6.0 Blocks - Colors
 --------------------------------------------------------------*/
 
-.is-style-outline.wp-block-button .wp-block-button__link, 
-.is-style-outline.wp-block-button .more-link, 
-.is-style-outline.wp-block-button .button {
-    color: #fff;
+.wp-block-button .wp-block-button__link,
+.wp-block-button .more-link,
+.wp-block-button .button,
+.is-style-fill.wp-block-button .wp-block-button__link,
+.is-style-fill.wp-block-button .wp-block-button__link,
+.is-style-fill.wp-block-button .more-link,
+.is-style-fill.wp-block-button .more-link,
+.is-style-fill.wp-block-button .button,
+.is-style-fill.wp-block-button .button {
+	background-color: #008ec2;
+	color: #fff;
 }
 
-.is-style-outline.wp-block-button .wp-block-button__link:hover, 
-.is-style-outline.wp-block-button .wp-block-button__link:focus, 
-.is-style-outline.wp-block-button .more-link:hover, 
-.is-style-outline.wp-block-button .more-link:focus, 
+.is-style-fill.wp-block-button .wp-block-button__link:hover,
+.is-style-fill.wp-block-button .wp-block-button__link:focus,
+.is-style-fill.wp-block-button .more-link:hover,
+.is-style-fill.wp-block-button .more-link:focus,
+.is-style-fill.wp-block-button .button:hover,
+.is-style-fill.wp-block-button .button:focus {
+	background-color: #fff;
+	color: #000;
+	border-color: #e6e6e6;
+}
+
+.is-style-outline.wp-block-button .wp-block-button__link,
+.is-style-outline.wp-block-button .more-link,
+.is-style-outline.wp-block-button .button {
+	border-color: #008ec2;
+	background-color: transparent;
+	color: #fff;
+}
+
+.is-style-outline.wp-block-button .wp-block-button__link:hover,
+.is-style-outline.wp-block-button .wp-block-button__link:focus,
+.is-style-outline.wp-block-button .more-link:hover,
+.is-style-outline.wp-block-button .more-link:focus,
 .is-style-outline.wp-block-button .button:hover,
 .is-style-outline.wp-block-button .button:focus {
-	color: #000;
+	background-color: #008ec2;
+	color: #fff;
 }
