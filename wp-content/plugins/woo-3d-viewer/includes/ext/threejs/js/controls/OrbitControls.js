@@ -13,7 +13,7 @@
 //    Zoom - middle mouse, or mousewheel / touch: two finger spread or squish
 //    Pan - right mouse, or arrow keys / touch: three finter swipe
 
-THREE.OrbitControls = function ( object, domElement ) {
+THREEW.OrbitControls = function ( object, domElement ) {
 
 	this.object = object;
 
@@ -23,7 +23,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	this.enabled = true;
 
 	// "target" sets the location of focus, where the object orbits around
-	this.target = new THREE.Vector3();
+	this.target = new THREEW.Vector3();
 
 	// How far you can dolly in and out ( PerspectiveCamera only )
 	this.minDistance = 0;
@@ -73,7 +73,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	this.keys = { LEFT: 37, UP: 38, RIGHT: 39, BOTTOM: 40 };
 
 	// Mouse buttons
-	this.mouseButtons = { ORBIT: THREE.MOUSE.LEFT, ZOOM: THREE.MOUSE.MIDDLE, PAN: THREE.MOUSE.RIGHT };
+	this.mouseButtons = { ORBIT: THREEW.MOUSE.LEFT, ZOOM: THREEW.MOUSE.MIDDLE, PAN: THREEW.MOUSE.RIGHT };
 
 	// for reset
 	this.target0 = this.target.clone();
@@ -114,14 +114,14 @@ THREE.OrbitControls = function ( object, domElement ) {
 	// this method is exposed, but perhaps it would be better if we can make it private...
 	this.update = function() {
 
-		var offset = new THREE.Vector3();
+		var offset = new THREEW.Vector3();
 
 		// so camera.up is the orbit axis
-		var quat = new THREE.Quaternion().setFromUnitVectors( object.up, new THREE.Vector3( 0, 1, 0 ) );
+		var quat = new THREEW.Quaternion().setFromUnitVectors( object.up, new THREEW.Vector3( 0, 1, 0 ) );
 		var quatInverse = quat.clone().inverse();
 
-		var lastPosition = new THREE.Vector3();
-		var lastQuaternion = new THREE.Quaternion();
+		var lastPosition = new THREEW.Vector3();
+		var lastQuaternion = new THREEW.Quaternion();
 
 		return function update () {
 
@@ -244,24 +244,24 @@ THREE.OrbitControls = function ( object, domElement ) {
 	var EPS = 0.000001;
 
 	// current position in spherical coordinates
-	var spherical = new THREE.Spherical();
-	var sphericalDelta = new THREE.Spherical();
+	var spherical = new THREEW.Spherical();
+	var sphericalDelta = new THREEW.Spherical();
 
 	var scale = 1;
-	var panOffset = new THREE.Vector3();
+	var panOffset = new THREEW.Vector3();
 	var zoomChanged = false;
 
-	var rotateStart = new THREE.Vector2();
-	var rotateEnd = new THREE.Vector2();
-	var rotateDelta = new THREE.Vector2();
+	var rotateStart = new THREEW.Vector2();
+	var rotateEnd = new THREEW.Vector2();
+	var rotateDelta = new THREEW.Vector2();
 
-	var panStart = new THREE.Vector2();
-	var panEnd = new THREE.Vector2();
-	var panDelta = new THREE.Vector2();
+	var panStart = new THREEW.Vector2();
+	var panEnd = new THREEW.Vector2();
+	var panDelta = new THREEW.Vector2();
 
-	var dollyStart = new THREE.Vector2();
-	var dollyEnd = new THREE.Vector2();
-	var dollyDelta = new THREE.Vector2();
+	var dollyStart = new THREEW.Vector2();
+	var dollyEnd = new THREEW.Vector2();
+	var dollyDelta = new THREEW.Vector2();
 
 	function getAutoRotationAngle() {
 
@@ -289,7 +289,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	var panLeft = function() {
 
-		var v = new THREE.Vector3();
+		var v = new THREEW.Vector3();
 
 		return function panLeft( distance, objectMatrix ) {
 
@@ -304,7 +304,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	var panUp = function() {
 
-		var v = new THREE.Vector3();
+		var v = new THREEW.Vector3();
 
 		return function panUp( distance, objectMatrix ) {
 
@@ -320,13 +320,13 @@ THREE.OrbitControls = function ( object, domElement ) {
 	// deltaX and deltaY are in pixels; right and down are positive
 	var pan = function() {
 
-		var offset = new THREE.Vector3();
+		var offset = new THREEW.Vector3();
 
 		return function pan ( deltaX, deltaY ) {
 
 			var element = scope.domElement === document ? scope.domElement.body : scope.domElement;
 
-			if ( scope.object instanceof THREE.PerspectiveCamera ) {
+			if ( scope.object instanceof THREEW.PerspectiveCamera ) {
 
 				// perspective
 				var position = scope.object.position;
@@ -340,7 +340,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 				panLeft( 2 * deltaX * targetDistance / element.clientHeight, scope.object.matrix );
 				panUp( 2 * deltaY * targetDistance / element.clientHeight, scope.object.matrix );
 
-			} else if ( scope.object instanceof THREE.OrthographicCamera ) {
+			} else if ( scope.object instanceof THREEW.OrthographicCamera ) {
 
 				// orthographic
 				panLeft( deltaX * ( scope.object.right - scope.object.left ) / scope.object.zoom / element.clientWidth, scope.object.matrix );
@@ -360,11 +360,11 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	function dollyIn( dollyScale ) {
 
-		if ( scope.object instanceof THREE.PerspectiveCamera ) {
+		if ( scope.object instanceof THREEW.PerspectiveCamera ) {
 
 			scale /= dollyScale;
 
-		} else if ( scope.object instanceof THREE.OrthographicCamera ) {
+		} else if ( scope.object instanceof THREEW.OrthographicCamera ) {
 
 			scope.object.zoom = Math.max( scope.minZoom, Math.min( scope.maxZoom, scope.object.zoom * dollyScale ) );
 			scope.object.updateProjectionMatrix();
@@ -381,11 +381,11 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	function dollyOut( dollyScale ) {
 
-		if ( scope.object instanceof THREE.PerspectiveCamera ) {
+		if ( scope.object instanceof THREEW.PerspectiveCamera ) {
 
 			scale *= dollyScale;
 
-		} else if ( scope.object instanceof THREE.OrthographicCamera ) {
+		} else if ( scope.object instanceof THREEW.OrthographicCamera ) {
 
 			scope.object.zoom = Math.max( scope.minZoom, Math.min( scope.maxZoom, scope.object.zoom / dollyScale ) );
 			scope.object.updateProjectionMatrix();
@@ -887,16 +887,16 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 };
 
-THREE.OrbitControls.prototype = Object.create( THREE.EventDispatcher.prototype );
-THREE.OrbitControls.prototype.constructor = THREE.OrbitControls;
+THREEW.OrbitControls.prototype = Object.create( THREEW.EventDispatcher.prototype );
+THREEW.OrbitControls.prototype.constructor = THREEW.OrbitControls;
 
-Object.defineProperties( THREE.OrbitControls.prototype, {
+Object.defineProperties( THREEW.OrbitControls.prototype, {
 
 	center: {
 
 		get: function () {
 
-			console.warn( 'THREE.OrbitControls: .center has been renamed to .target' );
+			console.warn( 'THREEW.OrbitControls: .center has been renamed to .target' );
 			return this.target;
 
 		}
@@ -909,14 +909,14 @@ Object.defineProperties( THREE.OrbitControls.prototype, {
 
 		get: function () {
 
-			console.warn( 'THREE.OrbitControls: .noZoom has been deprecated. Use .enableZoom instead.' );
+			console.warn( 'THREEW.OrbitControls: .noZoom has been deprecated. Use .enableZoom instead.' );
 			return ! this.enableZoom;
 
 		},
 
 		set: function ( value ) {
 
-			console.warn( 'THREE.OrbitControls: .noZoom has been deprecated. Use .enableZoom instead.' );
+			console.warn( 'THREEW.OrbitControls: .noZoom has been deprecated. Use .enableZoom instead.' );
 			this.enableZoom = ! value;
 
 		}
@@ -927,14 +927,14 @@ Object.defineProperties( THREE.OrbitControls.prototype, {
 
 		get: function () {
 
-			console.warn( 'THREE.OrbitControls: .noRotate has been deprecated. Use .enableRotate instead.' );
+			console.warn( 'THREEW.OrbitControls: .noRotate has been deprecated. Use .enableRotate instead.' );
 			return ! this.enableRotate;
 
 		},
 
 		set: function ( value ) {
 
-			console.warn( 'THREE.OrbitControls: .noRotate has been deprecated. Use .enableRotate instead.' );
+			console.warn( 'THREEW.OrbitControls: .noRotate has been deprecated. Use .enableRotate instead.' );
 			this.enableRotate = ! value;
 
 		}
@@ -945,14 +945,14 @@ Object.defineProperties( THREE.OrbitControls.prototype, {
 
 		get: function () {
 
-			console.warn( 'THREE.OrbitControls: .noPan has been deprecated. Use .enablePan instead.' );
+			console.warn( 'THREEW.OrbitControls: .noPan has been deprecated. Use .enablePan instead.' );
 			return ! this.enablePan;
 
 		},
 
 		set: function ( value ) {
 
-			console.warn( 'THREE.OrbitControls: .noPan has been deprecated. Use .enablePan instead.' );
+			console.warn( 'THREEW.OrbitControls: .noPan has been deprecated. Use .enablePan instead.' );
 			this.enablePan = ! value;
 
 		}
@@ -963,14 +963,14 @@ Object.defineProperties( THREE.OrbitControls.prototype, {
 
 		get: function () {
 
-			console.warn( 'THREE.OrbitControls: .noKeys has been deprecated. Use .enableKeys instead.' );
+			console.warn( 'THREEW.OrbitControls: .noKeys has been deprecated. Use .enableKeys instead.' );
 			return ! this.enableKeys;
 
 		},
 
 		set: function ( value ) {
 
-			console.warn( 'THREE.OrbitControls: .noKeys has been deprecated. Use .enableKeys instead.' );
+			console.warn( 'THREEW.OrbitControls: .noKeys has been deprecated. Use .enableKeys instead.' );
 			this.enableKeys = ! value;
 
 		}
@@ -981,14 +981,14 @@ Object.defineProperties( THREE.OrbitControls.prototype, {
 
 		get: function () {
 
-			console.warn( 'THREE.OrbitControls: .staticMoving has been deprecated. Use .enableDamping instead.' );
+			console.warn( 'THREEW.OrbitControls: .staticMoving has been deprecated. Use .enableDamping instead.' );
 			return ! this.enableDamping;
 
 		},
 
 		set: function ( value ) {
 
-			console.warn( 'THREE.OrbitControls: .staticMoving has been deprecated. Use .enableDamping instead.' );
+			console.warn( 'THREEW.OrbitControls: .staticMoving has been deprecated. Use .enableDamping instead.' );
 			this.enableDamping = ! value;
 
 		}
@@ -999,14 +999,14 @@ Object.defineProperties( THREE.OrbitControls.prototype, {
 
 		get: function () {
 
-			console.warn( 'THREE.OrbitControls: .dynamicDampingFactor has been renamed. Use .dampingFactor instead.' );
+			console.warn( 'THREEW.OrbitControls: .dynamicDampingFactor has been renamed. Use .dampingFactor instead.' );
 			return this.dampingFactor;
 
 		},
 
 		set: function ( value ) {
 
-			console.warn( 'THREE.OrbitControls: .dynamicDampingFactor has been renamed. Use .dampingFactor instead.' );
+			console.warn( 'THREEW.OrbitControls: .dynamicDampingFactor has been renamed. Use .dampingFactor instead.' );
 			this.dampingFactor = value;
 
 		}

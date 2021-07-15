@@ -43,7 +43,14 @@
 #woo3dv-cv {
 	width:100%;
 	display:block;
+}
+
+.woo3dv-canvas-border {
 	border: 1px solid;
+}
+
+.woo3dv-canvas-borderless {
+	border: none;
 }
 
 

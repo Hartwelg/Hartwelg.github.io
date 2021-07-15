@@ -2,25 +2,25 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.SpriteCanvasMaterial = function ( parameters ) {
+THREEW.SpriteCanvasMaterial = function ( parameters ) {
 
-	THREE.Material.call( this );
+	THREEW.Material.call( this );
 
 	this.type = 'SpriteCanvasMaterial';
 
-	this.color = new THREE.Color( 0xffffff );
+	this.color = new THREEW.Color( 0xffffff );
 	this.program = function ( context, color ) {};
 
 	this.setValues( parameters );
 
 };
 
-THREE.SpriteCanvasMaterial.prototype = Object.create( THREE.Material.prototype );
-THREE.SpriteCanvasMaterial.prototype.constructor = THREE.SpriteCanvasMaterial;
+THREEW.SpriteCanvasMaterial.prototype = Object.create( THREEW.Material.prototype );
+THREEW.SpriteCanvasMaterial.prototype.constructor = THREEW.SpriteCanvasMaterial;
 
-THREE.SpriteCanvasMaterial.prototype.clone = function () {
+THREEW.SpriteCanvasMaterial.prototype.clone = function () {
 
-	var material = new THREE.SpriteCanvasMaterial();
+	var material = new THREEW.SpriteCanvasMaterial();
 
 	material.copy( this );
 	material.color.copy( this.color );
@@ -32,15 +32,15 @@ THREE.SpriteCanvasMaterial.prototype.clone = function () {
 
 //
 
-THREE.CanvasRenderer = function ( parameters ) {
+THREEW.CanvasRenderer = function ( parameters ) {
 
-	console.log( 'THREE.CanvasRenderer', THREE.REVISION );
+	console.log( 'THREEW.CanvasRenderer', THREEW.REVISION );
 
 	parameters = parameters || {};
 
 	var _this = this,
 	_renderData, _elements, _lights,
-	_projector = new THREE.Projector(),
+	_projector = new THREEW.Projector(),
 
 	_canvas = parameters.canvas !== undefined
 			 ? parameters.canvas
@@ -62,7 +62,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 		alpha: parameters.alpha === true
 	} ),
 
-	_clearColor = new THREE.Color( 0x000000 ),
+	_clearColor = new THREEW.Color( 0x000000 ),
 	_clearAlpha = parameters.alpha === true ? 0 : 1,
 
 	_contextGlobalAlpha = 1,
@@ -77,40 +77,40 @@ THREE.CanvasRenderer = function ( parameters ) {
 	_camera,
 
 	_v1, _v2, _v3, _v4,
-	_v5 = new THREE.RenderableVertex(),
-	_v6 = new THREE.RenderableVertex(),
+	_v5 = new THREEW.RenderableVertex(),
+	_v6 = new THREEW.RenderableVertex(),
 
 	_v1x, _v1y, _v2x, _v2y, _v3x, _v3y,
 	_v4x, _v4y, _v5x, _v5y, _v6x, _v6y,
 
-	_color = new THREE.Color(),
-	_color1 = new THREE.Color(),
-	_color2 = new THREE.Color(),
-	_color3 = new THREE.Color(),
-	_color4 = new THREE.Color(),
+	_color = new THREEW.Color(),
+	_color1 = new THREEW.Color(),
+	_color2 = new THREEW.Color(),
+	_color3 = new THREEW.Color(),
+	_color4 = new THREEW.Color(),
 
-	_diffuseColor = new THREE.Color(),
-	_emissiveColor = new THREE.Color(),
+	_diffuseColor = new THREEW.Color(),
+	_emissiveColor = new THREEW.Color(),
 
-	_lightColor = new THREE.Color(),
+	_lightColor = new THREEW.Color(),
 
 	_patterns = {},
 
 	_image, _uvs,
 	_uv1x, _uv1y, _uv2x, _uv2y, _uv3x, _uv3y,
 
-	_clipBox = new THREE.Box2(),
-	_clearBox = new THREE.Box2(),
-	_elemBox = new THREE.Box2(),
+	_clipBox = new THREEW.Box2(),
+	_clearBox = new THREEW.Box2(),
+	_elemBox = new THREEW.Box2(),
 
-	_ambientLight = new THREE.Color(),
-	_directionalLights = new THREE.Color(),
-	_pointLights = new THREE.Color(),
+	_ambientLight = new THREEW.Color(),
+	_directionalLights = new THREEW.Color(),
+	_pointLights = new THREEW.Color(),
 
-	_vector3 = new THREE.Vector3(), // Needed for PointLight
-	_centroid = new THREE.Vector3(),
-	_normal = new THREE.Vector3(),
-	_normalViewMatrix = new THREE.Matrix3();
+	_vector3 = new THREEW.Vector3(), // Needed for PointLight
+	_centroid = new THREEW.Vector3(),
+	_normal = new THREEW.Vector3(),
+	_normalViewMatrix = new THREEW.Matrix3();
 
 	/* TODO
 	_canvas.mozImageSmoothingEnabled = false;
@@ -236,7 +236,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 	this.setClearColorHex = function ( hex, alpha ) {
 
-		console.warn( 'THREE.CanvasRenderer: .setClearColorHex() is being removed. Use .setClearColor() instead.' );
+		console.warn( 'THREEW.CanvasRenderer: .setClearColorHex() is being removed. Use .setClearColor() instead.' );
 		this.setClearColor( hex, alpha );
 
 	};
@@ -284,7 +284,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 			if ( _clearAlpha > 0 ) {
 
-				setBlending( THREE.NormalBlending );
+				setBlending( THREEW.NormalBlending );
 				setOpacity( 1 );
 
 				setFillStyle( 'rgba(' + Math.floor( _clearColor.r * 255 ) + ',' + Math.floor( _clearColor.g * 255 ) + ',' + Math.floor( _clearColor.b * 255 ) + ',' + _clearAlpha + ')' );
@@ -312,9 +312,9 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 	this.render = function ( scene, camera ) {
 
-		if ( camera instanceof THREE.Camera === false ) {
+		if ( camera instanceof THREEW.Camera === false ) {
 
-			console.error( 'THREE.CanvasRenderer.render: camera is not an instance of THREE.Camera.' );
+			console.error( 'THREEW.CanvasRenderer.render: camera is not an instance of THREEW.Camera.' );
 			return;
 
 		}
@@ -351,14 +351,14 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 			_elemBox.makeEmpty();
 
-			if ( element instanceof THREE.RenderableSprite ) {
+			if ( element instanceof THREEW.RenderableSprite ) {
 
 				_v1 = element;
 				_v1.x *= _canvasWidthHalf; _v1.y *= _canvasHeightHalf;
 
 				renderSprite( _v1, element, material );
 
-			} else if ( element instanceof THREE.RenderableLine ) {
+			} else if ( element instanceof THREEW.RenderableLine ) {
 
 				_v1 = element.v1; _v2 = element.v2;
 
@@ -376,7 +376,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 				}
 
-			} else if ( element instanceof THREE.RenderableFace ) {
+			} else if ( element instanceof THREEW.RenderableFace ) {
 
 				_v1 = element.v1; _v2 = element.v2; _v3 = element.v3;
 
@@ -443,17 +443,17 @@ THREE.CanvasRenderer = function ( parameters ) {
 			var light = _lights[ l ];
 			var lightColor = light.color;
 
-			if ( light instanceof THREE.AmbientLight ) {
+			if ( light instanceof THREEW.AmbientLight ) {
 
 				_ambientLight.add( lightColor );
 
-			} else if ( light instanceof THREE.DirectionalLight ) {
+			} else if ( light instanceof THREEW.DirectionalLight ) {
 
 				// for sprites
 
 				_directionalLights.add( lightColor );
 
-			} else if ( light instanceof THREE.PointLight ) {
+			} else if ( light instanceof THREEW.PointLight ) {
 
 				// for sprites
 
@@ -473,7 +473,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 			_lightColor.copy( light.color );
 
-			if ( light instanceof THREE.DirectionalLight ) {
+			if ( light instanceof THREEW.DirectionalLight ) {
 
 				var lightPosition = _vector3.setFromMatrixPosition( light.matrixWorld ).normalize();
 
@@ -485,7 +485,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 				color.add( _lightColor.multiplyScalar( amount ) );
 
-			} else if ( light instanceof THREE.PointLight ) {
+			} else if ( light instanceof THREEW.PointLight ) {
 
 				var lightPosition = _vector3.setFromMatrixPosition( light.matrixWorld );
 
@@ -519,7 +519,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 		_elemBox.min.set( v1.x - dist, v1.y - dist );
 		_elemBox.max.set( v1.x + dist, v1.y + dist );
 
-		if ( material instanceof THREE.SpriteMaterial ) {
+		if ( material instanceof THREEW.SpriteMaterial ) {
 
 			var texture = material.map;
 
@@ -575,7 +575,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 			}
 
-		} else if ( material instanceof THREE.SpriteCanvasMaterial ) {
+		} else if ( material instanceof THREEW.SpriteCanvasMaterial ) {
 
 			setStrokeStyle( material.color.getStyle() );
 			setFillStyle( material.color.getStyle() );
@@ -612,13 +612,13 @@ THREE.CanvasRenderer = function ( parameters ) {
 		_context.moveTo( v1.positionScreen.x, v1.positionScreen.y );
 		_context.lineTo( v2.positionScreen.x, v2.positionScreen.y );
 
-		if ( material instanceof THREE.LineBasicMaterial ) {
+		if ( material instanceof THREEW.LineBasicMaterial ) {
 
 			setLineWidth( material.linewidth );
 			setLineCap( material.linecap );
 			setLineJoin( material.linejoin );
 
-			if ( material.vertexColors !== THREE.VertexColors ) {
+			if ( material.vertexColors !== THREEW.VertexColors ) {
 
 				setStrokeStyle( material.color.getStyle() );
 
@@ -659,7 +659,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 			_context.stroke();
 			_elemBox.expandByScalar( material.linewidth * 2 );
 
-		} else if ( material instanceof THREE.LineDashedMaterial ) {
+		} else if ( material instanceof THREEW.LineDashedMaterial ) {
 
 			setLineWidth( material.linewidth );
 			setLineCap( material.linecap );
@@ -691,12 +691,12 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 		drawTriangle( _v1x, _v1y, _v2x, _v2y, _v3x, _v3y );
 
-		if ( ( material instanceof THREE.MeshLambertMaterial || material instanceof THREE.MeshPhongMaterial ) && material.map === null ) {
+		if ( ( material instanceof THREEW.MeshLambertMaterial || material instanceof THREEW.MeshPhongMaterial ) && material.map === null ) {
 
 			_diffuseColor.copy( material.color );
 			_emissiveColor.copy( material.emissive );
 
-			if ( material.vertexColors === THREE.FaceColors ) {
+			if ( material.vertexColors === THREEW.FaceColors ) {
 
 				_diffuseColor.multiply( element.color );
 
@@ -715,15 +715,15 @@ THREE.CanvasRenderer = function ( parameters ) {
 				 ? strokePath( _color, material.wireframeLinewidth, material.wireframeLinecap, material.wireframeLinejoin )
 				 : fillPath( _color );
 
-		} else if ( material instanceof THREE.MeshBasicMaterial ||
-				    material instanceof THREE.MeshLambertMaterial ||
-				    material instanceof THREE.MeshPhongMaterial ) {
+		} else if ( material instanceof THREEW.MeshBasicMaterial ||
+				    material instanceof THREEW.MeshLambertMaterial ||
+				    material instanceof THREEW.MeshPhongMaterial ) {
 
 			if ( material.map !== null ) {
 
 				var mapping = material.map.mapping;
 
-				if ( mapping === THREE.UVMapping ) {
+				if ( mapping === THREEW.UVMapping ) {
 
 					_uvs = element.uvs;
 					patternPath( _v1x, _v1y, _v2x, _v2y, _v3x, _v3y, _uvs[ uv1 ].x, _uvs[ uv1 ].y, _uvs[ uv2 ].x, _uvs[ uv2 ].y, _uvs[ uv3 ].x, _uvs[ uv3 ].y, material.map );
@@ -732,7 +732,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 			} else if ( material.envMap !== null ) {
 
-				if ( material.envMap.mapping === THREE.SphericalReflectionMapping ) {
+				if ( material.envMap.mapping === THREEW.SphericalReflectionMapping ) {
 
 					_normal.copy( element.vertexNormalsModel[ uv1 ] ).applyMatrix3( _normalViewMatrix );
 					_uv1x = 0.5 * _normal.x + 0.5;
@@ -754,7 +754,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 				_color.copy( material.color );
 
-				if ( material.vertexColors === THREE.FaceColors ) {
+				if ( material.vertexColors === THREEW.FaceColors ) {
 
 					_color.multiply( element.color );
 
@@ -766,7 +766,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 			}
 
-		} else if ( material instanceof THREE.MeshNormalMaterial ) {
+		} else if ( material instanceof THREEW.MeshNormalMaterial ) {
 
 			_normal.copy( element.normalModel ).applyMatrix3( _normalViewMatrix );
 
@@ -823,8 +823,8 @@ THREE.CanvasRenderer = function ( parameters ) {
 	function textureToPattern( texture ) {
 
 		if ( texture.version === 0 ||
-			texture instanceof THREE.CompressedTexture ||
-			texture instanceof THREE.DataTexture ) {
+			texture instanceof THREEW.CompressedTexture ||
+			texture instanceof THREEW.DataTexture ) {
 
 			return {
 				canvas: undefined,
@@ -852,8 +852,8 @@ THREE.CanvasRenderer = function ( parameters ) {
 		context.setTransform( 1, 0, 0, - 1, 0, image.height );
 		context.drawImage( image, 0, 0 );
 
-		var repeatX = texture.wrapS === THREE.RepeatWrapping;
-		var repeatY = texture.wrapT === THREE.RepeatWrapping;
+		var repeatX = texture.wrapS === THREEW.RepeatWrapping;
+		var repeatY = texture.wrapT === THREEW.RepeatWrapping;
 
 		var repeat = 'no-repeat';
 
@@ -1022,19 +1022,19 @@ THREE.CanvasRenderer = function ( parameters ) {
 
 		if ( _contextGlobalCompositeOperation !== value ) {
 
-			if ( value === THREE.NormalBlending ) {
+			if ( value === THREEW.NormalBlending ) {
 
 				_context.globalCompositeOperation = 'source-over';
 
-			} else if ( value === THREE.AdditiveBlending ) {
+			} else if ( value === THREEW.AdditiveBlending ) {
 
 				_context.globalCompositeOperation = 'lighter';
 
-			} else if ( value === THREE.SubtractiveBlending ) {
+			} else if ( value === THREEW.SubtractiveBlending ) {
 
 				_context.globalCompositeOperation = 'darker';
 
-			} else if ( value === THREE.MultiplyBlending ) {
+			} else if ( value === THREEW.MultiplyBlending ) {
 
 				_context.globalCompositeOperation = 'multiply';
 

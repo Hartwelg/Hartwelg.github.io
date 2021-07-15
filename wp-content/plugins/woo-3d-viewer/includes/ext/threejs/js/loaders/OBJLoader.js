@@ -2,7 +2,7 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.OBJLoader = ( function () {
+THREEW.OBJLoader = ( function () {
 
 	// o object_name | g group_name
 	var object_pattern = /^[og]\s*(.+)?/;
@@ -364,7 +364,7 @@ THREE.OBJLoader = ( function () {
 
 	function OBJLoader( manager ) {
 
-		this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
+		this.manager = ( manager !== undefined ) ? manager : THREEW.DefaultLoadingManager;
 
 		this.materials = null;
 
@@ -378,7 +378,7 @@ THREE.OBJLoader = ( function () {
 
 			var scope = this;
 
-			var loader = new THREE.FileLoader( scope.manager );
+			var loader = new THREEW.FileLoader( scope.manager );
 			loader.setPath( this.path );
 			loader.load( url, function ( text ) {
 
@@ -623,7 +623,7 @@ THREE.OBJLoader = ( function () {
 					// Handle null terminated files without exception
 					if ( line === '\0' ) continue;
 
-					throw new Error( 'THREE.OBJLoader: Unexpected line: "' + line + '"' );
+					throw new Error( 'THREEW.OBJLoader: Unexpected line: "' + line + '"' );
 
 				}
 
@@ -631,7 +631,7 @@ THREE.OBJLoader = ( function () {
 
 			state.finalize();
 
-			var container = new THREE.Group();
+			var container = new THREEW.Group();
 			container.materialLibraries = [].concat( state.materialLibraries );
 
 			for ( var i = 0, l = state.objects.length; i < l; i ++ ) {
@@ -646,13 +646,13 @@ THREE.OBJLoader = ( function () {
 				// Skip o/g line declarations that did not follow with any faces
 				if ( geometry.vertices.length === 0 ) continue;
 
-				var buffergeometry = new THREE.BufferGeometry();
+				var buffergeometry = new THREEW.BufferGeometry();
 
-				buffergeometry.addAttribute( 'position', new THREE.Float32BufferAttribute( geometry.vertices, 3 ) );
+				buffergeometry.addAttribute( 'position', new THREEW.Float32BufferAttribute( geometry.vertices, 3 ) );
 
 				if ( geometry.normals.length > 0 ) {
 
-					buffergeometry.addAttribute( 'normal', new THREE.Float32BufferAttribute( geometry.normals, 3 ) );
+					buffergeometry.addAttribute( 'normal', new THREEW.Float32BufferAttribute( geometry.normals, 3 ) );
 
 				} else {
 
@@ -663,13 +663,13 @@ THREE.OBJLoader = ( function () {
 				if ( geometry.colors.length > 0 ) {
 
 					hasVertexColors = true;
-					buffergeometry.addAttribute( 'color', new THREE.Float32BufferAttribute( geometry.colors, 3 ) );
+					buffergeometry.addAttribute( 'color', new THREEW.Float32BufferAttribute( geometry.colors, 3 ) );
 
 				}
 
 				if ( geometry.uvs.length > 0 ) {
 
-					buffergeometry.addAttribute( 'uv', new THREE.Float32BufferAttribute( geometry.uvs, 2 ) );
+					buffergeometry.addAttribute( 'uv', new THREEW.Float32BufferAttribute( geometry.uvs, 2 ) );
 
 				}
 
@@ -687,18 +687,18 @@ THREE.OBJLoader = ( function () {
 						material = this.materials.create( sourceMaterial.name );
 
 						// mtl etc. loaders probably can't create line materials correctly, copy properties to a line material.
-						if ( isLine && material && ! ( material instanceof THREE.LineBasicMaterial ) ) {
+						if ( isLine && material && ! ( material instanceof THREEW.LineBasicMaterial ) ) {
 
-							var materialLine = new THREE.LineBasicMaterial();
-							THREE.Material.prototype.copy.call( materialLine, material );
+							var materialLine = new THREEW.LineBasicMaterial();
+							THREEW.Material.prototype.copy.call( materialLine, material );
 							materialLine.color.copy( material.color );
 							materialLine.lights = false;
 							material = materialLine;
 
-						} else if ( isPoints && material && ! ( material instanceof THREE.PointsMaterial ) ) {
+						} else if ( isPoints && material && ! ( material instanceof THREEW.PointsMaterial ) ) {
 
-							var materialPoints = new THREE.PointsMaterial( { size: 10, sizeAttenuation: false } );
-							THREE.Material.prototype.copy.call( materialPoints, material );
+							var materialPoints = new THREEW.PointsMaterial( { size: 10, sizeAttenuation: false } );
+							THREEW.Material.prototype.copy.call( materialPoints, material );
 							materialPoints.color.copy( material.color );
 							materialPoints.map = material.map;
 							materialPoints.lights = false;
@@ -712,16 +712,16 @@ THREE.OBJLoader = ( function () {
 
 						if ( isLine ) {
 
-							material = new THREE.LineBasicMaterial();
+							material = new THREEW.LineBasicMaterial();
 
 						} else if ( isPoints ) {
 
-							material = new THREE.PointsMaterial( { size: 1, sizeAttenuation: false } );
+							material = new THREEW.PointsMaterial( { size: 1, sizeAttenuation: false } );
 
 						} else {
 
-							material = new THREE.MeshPhongMaterial();
-//							material = new THREE.MeshLambertMaterial({precision: 'mediump'});
+							material = new THREEW.MeshPhongMaterial();
+//							material = new THREEW.MeshLambertMaterial({precision: 'mediump'});
 
 						}
 
@@ -730,7 +730,7 @@ THREE.OBJLoader = ( function () {
 					}
 
 					material.flatShading = sourceMaterial.smooth ? false : true;
-					material.vertexColors = hasVertexColors ? THREE.VertexColors : THREE.NoColors;
+					material.vertexColors = hasVertexColors ? THREEW.VertexColors : THREEW.NoColors;
 
 					createdMaterials.push( material );
 
@@ -751,15 +751,15 @@ THREE.OBJLoader = ( function () {
 
 					if ( isLine ) {
 
-						mesh = new THREE.LineSegments( buffergeometry, createdMaterials );
+						mesh = new THREEW.LineSegments( buffergeometry, createdMaterials );
 
 					} else if ( isPoints ) {
 
-						mesh = new THREE.Points( buffergeometry, createdMaterials );
+						mesh = new THREEW.Points( buffergeometry, createdMaterials );
 
 					} else {
 
-						mesh = new THREE.Mesh( buffergeometry, createdMaterials );
+						mesh = new THREEW.Mesh( buffergeometry, createdMaterials );
 
 					}
 
@@ -767,15 +767,15 @@ THREE.OBJLoader = ( function () {
 
 					if ( isLine ) {
 
-						mesh = new THREE.LineSegments( buffergeometry, createdMaterials[ 0 ] );
+						mesh = new THREEW.LineSegments( buffergeometry, createdMaterials[ 0 ] );
 
 					} else if ( isPoints ) {
 
-						mesh = new THREE.Points( buffergeometry, createdMaterials[ 0 ] );
+						mesh = new THREEW.Points( buffergeometry, createdMaterials[ 0 ] );
 
 					} else {
 
-						mesh = new THREE.Mesh( buffergeometry, createdMaterials[ 0 ] );
+						mesh = new THREEW.Mesh( buffergeometry, createdMaterials[ 0 ] );
 
 					}
 

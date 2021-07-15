@@ -2,15 +2,15 @@
  * @author mrdoob / http://mrdoob.com/
  */
 
-THREE.VRMLLoader = function ( manager ) {
+THREEW.VRMLLoader = function ( manager ) {
 
-	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
+	this.manager = ( manager !== undefined ) ? manager : THREEW.DefaultLoadingManager;
 
 };
 
-THREE.VRMLLoader.prototype = {
+THREEW.VRMLLoader.prototype = {
 
-	constructor: THREE.VRMLLoader,
+	constructor: THREEW.VRMLLoader,
 
 	// for IndexedFaceSet support
 	isRecordingPoints: false,
@@ -32,9 +32,9 @@ THREE.VRMLLoader.prototype = {
 
 		var scope = this;
 
-		var path = ( scope.path === undefined ) ? THREE.LoaderUtils.extractUrlBase( url ) : scope.path;
+		var path = ( scope.path === undefined ) ? THREEW.LoaderUtils.extractUrlBase( url ) : scope.path;
 
-		var loader = new THREE.FileLoader( this.manager );
+		var loader = new THREEW.FileLoader( this.manager );
 		loader.setPath( scope.path );
 		loader.load( url, function ( text ) {
 
@@ -69,7 +69,7 @@ THREE.VRMLLoader.prototype = {
 
 		var scope = this;
 
-		var textureLoader = new THREE.TextureLoader( this.manager );
+		var textureLoader = new THREEW.TextureLoader( this.manager );
 		textureLoader.setPath( this.resourcePath || path ).setCrossOrigin( this.crossOrigin );
 
 		function parseV2( lines, scene ) {
@@ -122,10 +122,10 @@ THREE.VRMLLoader.prototype = {
 
 				var index = geometry.index;
 				var positionAttribute = geometry.attributes.position;
-				var colorAttribute = new THREE.BufferAttribute( new Float32Array( geometry.attributes.position.count * 3 ), 3 );
+				var colorAttribute = new THREEW.BufferAttribute( new Float32Array( geometry.attributes.position.count * 3 ), 3 );
 
-				var position = new THREE.Vector3();
-				var color = new THREE.Color();
+				var position = new THREEW.Vector3();
+				var color = new THREEW.Color();
 
 				for ( var i = 0; i < index.count; i ++ ) {
 
@@ -423,7 +423,7 @@ THREE.VRMLLoader.prototype = {
 
 							if ( parts.length !== 4 ) {
 
-								console.warn( 'THREE.VRMLLoader: Invalid color format detected for %s.', fieldName );
+								console.warn( 'THREEW.VRMLLoader: Invalid color format detected for %s.', fieldName );
 								break;
 
 							}
@@ -443,7 +443,7 @@ THREE.VRMLLoader.prototype = {
 						case 'size':
 							if ( parts.length !== 4 ) {
 
-								console.warn( 'THREE.VRMLLoader: Invalid vector format detected for %s.', fieldName );
+								console.warn( 'THREEW.VRMLLoader: Invalid vector format detected for %s.', fieldName );
 								break;
 
 							}
@@ -468,7 +468,7 @@ THREE.VRMLLoader.prototype = {
 						case 'creaseAngle':
 							if ( parts.length !== 2 ) {
 
-								console.warn( 'THREE.VRMLLoader: Invalid single float value specification detected for %s.', fieldName );
+								console.warn( 'THREEW.VRMLLoader: Invalid single float value specification detected for %s.', fieldName );
 								break;
 
 							}
@@ -480,7 +480,7 @@ THREE.VRMLLoader.prototype = {
 						case 'rotation':
 							if ( parts.length !== 5 ) {
 
-								console.warn( 'THREE.VRMLLoader: Invalid quaternion format detected for %s.', fieldName );
+								console.warn( 'THREEW.VRMLLoader: Invalid quaternion format detected for %s.', fieldName );
 								break;
 
 							}
@@ -501,7 +501,7 @@ THREE.VRMLLoader.prototype = {
 						case 'convex':
 							if ( parts.length !== 2 ) {
 
-								console.warn( 'THREE.VRMLLoader: Invalid format detected for %s.', fieldName );
+								console.warn( 'THREEW.VRMLLoader: Invalid format detected for %s.', fieldName );
 								break;
 
 							}
@@ -613,7 +613,7 @@ THREE.VRMLLoader.prototype = {
 
 						if ( undefined == defines[ defineKey ] ) {
 
-							console.warn( 'THREE.VRMLLoader: %s is not defined.', defineKey );
+							console.warn( 'THREEW.VRMLLoader: %s is not defined.', defineKey );
 
 						} else {
 
@@ -629,7 +629,7 @@ THREE.VRMLLoader.prototype = {
 								if ( defines[ defineKey ].solid !== undefined && defines[ defineKey ].solid === false ) {
 
 									parent.geometry.solid = false;
-									parent.material.side = THREE.DoubleSide;
+									parent.material.side = THREEW.DoubleSide;
 
 								}
 
@@ -658,7 +658,7 @@ THREE.VRMLLoader.prototype = {
 
 				var l_visible = data.on !== undefined ? data.on : true;
 				var l_intensity = data.intensity !== undefined ? data.intensity : 1;
-				var l_color = new THREE.Color();
+				var l_color = new THREEW.Color();
 
 				if ( data.color ) {
 
@@ -668,7 +668,7 @@ THREE.VRMLLoader.prototype = {
 
 				if ( data.nodeType === 'AmbientLight' ) {
 
-					object = new THREE.AmbientLight( l_color, l_intensity );
+					object = new THREEW.AmbientLight( l_color, l_intensity );
 					object.visible = l_visible;
 
 					parent.add( object );
@@ -683,7 +683,7 @@ THREE.VRMLLoader.prototype = {
 
 					}
 
-					object = new THREE.PointLight( l_color, l_intensity, l_distance );
+					object = new THREEW.PointLight( l_color, l_intensity, l_distance );
 					object.visible = l_visible;
 
 					parent.add( object );
@@ -708,14 +708,14 @@ THREE.VRMLLoader.prototype = {
 
 					}
 
-					object = new THREE.SpotLight( l_color, l_intensity, l_distance, l_angle, l_penumbra );
+					object = new THREEW.SpotLight( l_color, l_intensity, l_distance, l_angle, l_penumbra );
 					object.visible = l_visible;
 
 					parent.add( object );
 
 				} else if ( data.nodeType === 'Transform' || data.nodeType === 'Group' ) {
 
-					object = new THREE.Object3D();
+					object = new THREEW.Object3D();
 
 					if ( /DEF/.exec( data.string ) ) {
 
@@ -736,7 +736,7 @@ THREE.VRMLLoader.prototype = {
 
 						var r = data.rotation;
 
-						object.quaternion.setFromAxisAngle( new THREE.Vector3( r.x, r.y, r.z ), r.w );
+						object.quaternion.setFromAxisAngle( new THREEW.Vector3( r.x, r.y, r.z ), r.w );
 
 					}
 
@@ -752,7 +752,7 @@ THREE.VRMLLoader.prototype = {
 
 				} else if ( data.nodeType === 'Shape' ) {
 
-					object = new THREE.Mesh();
+					object = new THREEW.Mesh();
 
 					if ( /DEF/.exec( data.string ) ) {
 
@@ -772,14 +772,14 @@ THREE.VRMLLoader.prototype = {
 
 					var radius = 2e4;
 
-					var skyGeometry = new THREE.SphereBufferGeometry( radius, segments, segments );
-					var skyMaterial = new THREE.MeshBasicMaterial( { fog: false, side: THREE.BackSide } );
+					var skyGeometry = new THREEW.SphereBufferGeometry( radius, segments, segments );
+					var skyMaterial = new THREEW.MeshBasicMaterial( { fog: false, side: THREEW.BackSide } );
 
 					if ( data.skyColor.length > 1 ) {
 
 						paintFaces( skyGeometry, radius, data.skyAngle, data.skyColor, true );
 
-						skyMaterial.vertexColors = THREE.VertexColors;
+						skyMaterial.vertexColors = THREEW.VertexColors;
 
 					} else {
 
@@ -788,7 +788,7 @@ THREE.VRMLLoader.prototype = {
 
 					}
 
-					scene.add( new THREE.Mesh( skyGeometry, skyMaterial ) );
+					scene.add( new THREEW.Mesh( skyGeometry, skyMaterial ) );
 
 					// ground (half sphere):
 
@@ -796,12 +796,12 @@ THREE.VRMLLoader.prototype = {
 
 						radius = 1.2e4;
 
-						var groundGeometry = new THREE.SphereBufferGeometry( radius, segments, segments, 0, 2 * Math.PI, 0.5 * Math.PI, 1.5 * Math.PI );
-						var groundMaterial = new THREE.MeshBasicMaterial( { fog: false, side: THREE.BackSide, vertexColors: THREE.VertexColors } );
+						var groundGeometry = new THREEW.SphereBufferGeometry( radius, segments, segments, 0, 2 * Math.PI, 0.5 * Math.PI, 1.5 * Math.PI );
+						var groundMaterial = new THREEW.MeshBasicMaterial( { fog: false, side: THREEW.BackSide, vertexColors: THREEW.VertexColors } );
 
 						paintFaces( groundGeometry, radius, data.groundAngle, data.groundColor, false );
 
-						scene.add( new THREE.Mesh( groundGeometry, groundMaterial ) );
+						scene.add( new THREEW.Mesh( groundGeometry, groundMaterial ) );
 
 					}
 
@@ -811,23 +811,23 @@ THREE.VRMLLoader.prototype = {
 
 						var s = data.size;
 
-						parent.geometry = new THREE.BoxBufferGeometry( s.x, s.y, s.z );
+						parent.geometry = new THREEW.BoxBufferGeometry( s.x, s.y, s.z );
 
 					} else if ( data.nodeType === 'Cylinder' ) {
 
-						parent.geometry = new THREE.CylinderBufferGeometry( data.radius, data.radius, data.height );
+						parent.geometry = new THREEW.CylinderBufferGeometry( data.radius, data.radius, data.height );
 
 					} else if ( data.nodeType === 'Cone' ) {
 
-						parent.geometry = new THREE.CylinderBufferGeometry( data.topRadius, data.bottomRadius, data.height );
+						parent.geometry = new THREEW.CylinderBufferGeometry( data.topRadius, data.bottomRadius, data.height );
 
 					} else if ( data.nodeType === 'Sphere' ) {
 
-						parent.geometry = new THREE.SphereBufferGeometry( data.radius );
+						parent.geometry = new THREEW.SphereBufferGeometry( data.radius );
 
 					} else if ( data.nodeType === 'IndexedFaceSet' ) {
 
-						var geometry = new THREE.BufferGeometry();
+						var geometry = new THREEW.BufferGeometry();
 
 						var positions = [];
 						var colors = [];
@@ -1082,30 +1082,30 @@ THREE.VRMLLoader.prototype = {
 
 						if ( false === data.solid ) {
 
-							parent.material.side = THREE.DoubleSide;
+							parent.material.side = THREEW.DoubleSide;
 
 						}
 
 						// we need to store it on the geometry for use with defines
 						geometry.solid = data.solid;
 
-						geometry.addAttribute( 'position', new THREE.Float32BufferAttribute( positions, 3 ) );
+						geometry.addAttribute( 'position', new THREEW.Float32BufferAttribute( positions, 3 ) );
 
 						if ( colors.length > 0 ) {
 
-							geometry.addAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
+							geometry.addAttribute( 'color', new THREEW.Float32BufferAttribute( colors, 3 ) );
 
 						}
 
 						if ( uvs.length > 0 ) {
 
-							geometry.addAttribute( 'uv', new THREE.Float32BufferAttribute( uvs, 2 ) );
+							geometry.addAttribute( 'uv', new THREEW.Float32BufferAttribute( uvs, 2 ) );
 
 						}
 
 						if ( normals.length > 0 ) {
 
-							geometry.addAttribute( 'normal', new THREE.Float32BufferAttribute( normals, 3 ) );
+							geometry.addAttribute( 'normal', new THREEW.Float32BufferAttribute( normals, 3 ) );
 
 						} else {
 
@@ -1139,7 +1139,7 @@ THREE.VRMLLoader.prototype = {
 
 						if ( child.nodeType === 'Material' ) {
 
-							var material = new THREE.MeshPhongMaterial();
+							var material = new THREEW.MeshPhongMaterial();
 
 							if ( child.diffuseColor !== undefined ) {
 
@@ -1220,7 +1220,7 @@ THREE.VRMLLoader.prototype = {
 
 		}
 
-		var scene = new THREE.Scene();
+		var scene = new THREEW.Scene();
 
 		var lines = data.split( '\n' );
 
@@ -1283,7 +1283,7 @@ THREE.VRMLLoader.prototype = {
 
 		if ( /V1.0/.exec( header ) ) {
 
-			console.warn( 'THREE.VRMLLoader: V1.0 not supported yet.' );
+			console.warn( 'THREEW.VRMLLoader: V1.0 not supported yet.' );
 
 		} else if ( /V2.0/.exec( header ) ) {
 

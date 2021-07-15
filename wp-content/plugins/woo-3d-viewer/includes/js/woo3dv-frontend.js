@@ -15,7 +15,7 @@ woo3dv.current_model = '';
 woo3dv.current_mtl = '';
 woo3dv.font_size = 25;
 woo3dv.wireframe = false;
-woo3dv.vec = new THREE.Vector3();
+woo3dv.vec = new THREEW.Vector3();
 woo3dv.product_offset_z = false;
 
 jQuery(document).ready(function(){
@@ -55,6 +55,12 @@ function woo3dvInit3D() {
 	woo3dv.stored_controls_target_y = parseFloat(jQuery('#woo3dv_controls_target_y').val());
 	woo3dv.stored_controls_target_z = parseFloat(jQuery('#woo3dv_controls_target_z').val());
 	woo3dv.offset_z = parseFloat(jQuery('#woo3dv_offset_z').val());
+	if (jQuery('#woo3dv_background_transparency').val().length>1) {
+		woo3dv.background_transparency = jQuery('#woo3dv_background_transparency').val();
+	}
+	else {
+		woo3dv.background_transparency = 'off';
+	}
 	if (jQuery('#woo3dv_show_light_source1').val().length>1) woo3dv.show_light_source1 = jQuery('#woo3dv_show_light_source1').val();
 	if (jQuery('#woo3dv_show_light_source2').val().length>1) woo3dv.show_light_source2 = jQuery('#woo3dv_show_light_source2').val();
 	if (jQuery('#woo3dv_show_light_source3').val().length>1) woo3dv.show_light_source3 = jQuery('#woo3dv_show_light_source3').val();
@@ -111,8 +117,11 @@ function woo3dvViewerInit(model, mtl, ext) {
 	woo3dv.mtl=mtl;
 
 	//3D Renderer
-	woo3dv.renderer = Detector.webgl? new THREE.WebGLRenderer({ antialias: true, canvas: woo3dv_canvas, preserveDrawingBuffer: true }): new THREE.CanvasRenderer({canvas: woo3dv_canvas});
-	woo3dv.renderer.setClearColor( parseInt(woo3dv.background1, 16) );
+	woo3dv.renderer = Detector.webgl? new THREEW.WebGLRenderer({ antialias: true, alpha: (woo3dv.background_transparency=='on' ? true : false), canvas: woo3dv_canvas, preserveDrawingBuffer: true }): new THREEW.CanvasRenderer({canvas: woo3dv_canvas});
+	if (this.woo3dv.background_transparency=='off') {
+		woo3dv.renderer.setClearColor( parseInt(woo3dv.background1, 16) );
+	}
+//	woo3dv.renderer.setClearColor( parseInt(woo3dv.background1, 16) );
 	woo3dv.renderer.setPixelRatio( window.devicePixelRatio );
 	woo3dv.renderer.setSize( woo3dv_canvas_width, woo3dv_canvas_height );
 
@@ -123,10 +132,10 @@ function woo3dvViewerInit(model, mtl, ext) {
 		woo3dv.renderer.gammaOutput = true;
 		woo3dv.renderer.shadowMap.enabled = true;
 //		woo3dv.renderer.shadowMap.renderReverseSided = false;
-		woo3dv.renderer.shadowMap.Type = THREE.PCFSoftShadowMap;
+		woo3dv.renderer.shadowMap.Type = THREEW.PCFSoftShadowMap;
 	}
 
-	woo3dv.camera = new THREE.PerspectiveCamera( 35, woo3dv_canvas_width / woo3dv_canvas_height, 0.01, 1000 );
+	woo3dv.camera = new THREEW.PerspectiveCamera( 35, woo3dv_canvas_width / woo3dv_canvas_height, 0.01, 1000 );
 //	woo3dv.camera.position.set( 0, 0, 6 );
 
 	if (woo3dv.stored_position_x!=0 || woo3dv.stored_position_y!=0 || woo3dv.stored_position_z!=0) {
@@ -136,31 +145,31 @@ function woo3dvViewerInit(model, mtl, ext) {
 		woo3dv.camera.position.set( 0, 0, 0 );
 	}
 
-//	woo3dv.cameraTarget = new THREE.Vector3( 0, 0, 0 );
+//	woo3dv.cameraTarget = new THREEW.Vector3( 0, 0, 0 );
 
 
 
 
-	woo3dv.scene = new THREE.Scene();
+	woo3dv.scene = new THREEW.Scene();
 
-	if (jQuery('#woo3dv_background1').val().length>0) {
-		woo3dv.scene.background = new THREE.Color(parseInt(jQuery('#woo3dv_background1').val().replace('#', '0x'), 16));
+	if (jQuery('#woo3dv_background1').val().length>0 && this.woo3dv.background_transparency=='off') {
+		woo3dv.scene.background = new THREEW.Color(parseInt(jQuery('#woo3dv_background1').val().replace('#', '0x'), 16));
 	}
 
 
-	woo3dv.clock = new THREE.Clock();
-	//woo3dv.scene.fog = new THREE.Fog( 0x72645b, 1, 300 );
+	woo3dv.clock = new THREEW.Clock();
+	//woo3dv.scene.fog = new THREEW.Fog( 0x72645b, 1, 300 );
 
 	//Group
 	if (woo3dv.group) woo3dv.scene.remove(woo3dv.group);
-	woo3dv.group = new THREE.Group();
+	woo3dv.group = new THREEW.Group();
 	woo3dv.group.position.set( 0, 0, 0 )
 	woo3dv.group.name = "group";
 	woo3dv.scene.add( woo3dv.group );
 
 
 	//Light
-	ambientLight = new THREE.AmbientLight(0x191919);
+	ambientLight = new THREEW.AmbientLight(0x191919);
 	woo3dv.scene.add(ambientLight);
 	ambientLight.name = "light";
 
@@ -178,7 +187,7 @@ function woo3dvViewerInit(model, mtl, ext) {
 
 
 
-	woo3dv.controls = new THREE.OrbitControls( woo3dv.camera, woo3dv.renderer.domElement );
+	woo3dv.controls = new THREEW.OrbitControls( woo3dv.camera, woo3dv.renderer.domElement );
 	if (woo3dv.auto_rotation=='on' && !(woo3dv.mobile_no_animation=='on' && woo3dvMobileCheck())) {
 		woo3dv.controls.autoRotate = true; 
 	}
@@ -192,39 +201,71 @@ function woo3dvViewerInit(model, mtl, ext) {
 	}
 
 	if (ext=='stl') {
-		woo3dv.loader = new THREE.STLLoader();
+		woo3dv.loader = new THREEW.STLLoader();
 	}
 /*	else if (ext=='dae') {
-		woo3dv.loader = new THREE.ColladaLoader();
+		woo3dv.loader = new THREEW.ColladaLoader();
 	}*/
 	else if (ext=='obj') {
-		woo3dv.loader = new THREE.OBJLoader();
+		woo3dv.loader = new THREEW.OBJLoader();
 	}
 	else if (ext=='wrl') {
-		woo3dv.loader = new THREE.VRMLLoader();
+		woo3dv.loader = new THREEW.VRMLLoader();
 	}
 	else if (ext=='gltf' || ext=='glb') {
-		THREE.DRACOLoader.setDecoderPath( woo3dv.plugin_url+'includes/ext/threejs/js/libs/draco/gltf/' );
-		woo3dv.loader = new THREE.GLTFLoader();
-		woo3dv.loader.setDRACOLoader( new THREE.DRACOLoader() );
+		THREEW.DRACOLoader.setDecoderPath( woo3dv.plugin_url+'includes/ext/threejs/js/libs/draco/gltf/' );
+		woo3dv.loader = new THREEW.GLTFLoader();
+		woo3dv.loader.setDRACOLoader( new THREEW.DRACOLoader() );
 	}
 
 	if (model.length>0) {
 		woo3dvDisplayUserDefinedProgressBar(true);
-		var mtlLoader = new THREE.MTLLoader();
+		var mtlLoader = new THREEW.MTLLoader();
 		mtlLoader.setPath( woo3dv.upload_url );
 
 		if (ext=='obj' && mtl && mtl.length>0) {
 
 			mtlLoader.load( mtl, function( materials ) {
 				materials.preload();
-				//var objLoader = new THREE.OBJLoader();
+				//var objLoader = new THREEW.OBJLoader();
 				woo3dv.loader.setMaterials( materials );
 
 				woo3dv.loader.load( model, function ( geometry ) {
 		        	    woo3dvModelOnLoad(geometry);
-				});
-			});
+				},
+				function( e ){},
+				function ( error ) {
+					woo3dvDisplayUserDefinedProgressBar(false);
+					if (typeof(error)=='object') {
+						if (typeof(error.currentTarget)=='object') {
+							var error_msg = '';
+							error_msg+=error.currentTarget.responseURL.split('/').reverse()[0]+': ';
+							error_msg+=error.currentTarget.status+' '+error.currentTarget.statusText;
+							alert(error_msg);
+						}
+					}
+					else {
+						alert('Model not found');
+					}
+				}
+				);
+			},
+			function( e ){},
+			function ( error ) {
+				woo3dvDisplayUserDefinedProgressBar(false);
+				if (typeof(error)=='object') {
+					if (typeof(error.currentTarget)=='object') {
+						var error_msg = '';
+						error_msg+=error.currentTarget.responseURL.split('/').reverse()[0]+': ';
+						error_msg+=error.currentTarget.status+' '+error.currentTarget.statusText;
+						alert(error_msg);
+					}
+				}
+				else {
+					alert('Material not found');
+				}
+			}
+			);
 		}
 		else if (ext=='gltf' || ext=='glb') {
 			woo3dv.loader.load( model, function ( gltf ) {
@@ -237,16 +278,48 @@ function woo3dvViewerInit(model, mtl, ext) {
 					} );
 */
 				if (gltf.animations.length>0) {
-					woo3dv.mixer = new THREE.AnimationMixer( gltf.scene );
+					woo3dv.mixer = new THREEW.AnimationMixer( gltf.scene );
 					woo3dv.mixer.clipAction( gltf.animations[ 0 ] ).play();
 				}
-			} );
+			},
+			function( e ){},
+			function ( error ) {
+				woo3dvDisplayUserDefinedProgressBar(false);
+				if (typeof(error)=='object') {
+					if (typeof(error.currentTarget)=='object') {
+						var error_msg = '';
+						error_msg+=error.currentTarget.responseURL.split('/').reverse()[0]+': ';
+						error_msg+=error.currentTarget.status+' '+error.currentTarget.statusText;
+						alert(error_msg);
+					}
+				}
+				else {
+					alert('Model not found');
+				}
+			}
+		);
 		}
 		else {
 
 			woo3dv.loader.load( model, function ( geometry ) {
 				woo3dvModelOnLoad(geometry)
-			} );
+			},
+			function( e ){},
+			function ( error ) {
+				woo3dvDisplayUserDefinedProgressBar(false);
+				if (typeof(error)=='object') {
+					if (typeof(error.currentTarget)=='object') {
+						var error_msg = '';
+						error_msg+=error.currentTarget.responseURL.split('/').reverse()[0]+': ';
+						error_msg+=error.currentTarget.status+' '+error.currentTarget.statusText;
+						alert(error_msg);
+					}
+				}
+				else {
+					alert('Model not found');
+				}
+			}
+			);
 		}
 	}
 
@@ -280,13 +353,13 @@ function woo3dvFitCameraToObject( camera, object, offset, controls ) {
 		woo3dv.camera.position.set(max_side*woo3dv.resize_scale, max_side*woo3dv.resize_scale, max_side*woo3dv.resize_scale);
 /*
 		if (aspect>1) {
-			woo3dv.controls.target = new THREE.Vector3(0, 0, 0);
+			woo3dv.controls.target = new THREEW.Vector3(0, 0, 0);
 		}
 		else {
-			woo3dv.controls.target = new THREE.Vector3(0, mesh_height/2, 0);
+			woo3dv.controls.target = new THREEW.Vector3(0, mesh_height/2, 0);
 		}
 */
-		woo3dv.controls.target = new THREE.Vector3(0, 0, 0);
+		woo3dv.controls.target = new THREEW.Vector3(0, 0, 0);
 
 		woo3dv.camera.far=plane_width*5;
 		woo3dv.camera.updateProjectionMatrix();
@@ -297,9 +370,9 @@ function woo3dvFitCameraToObject( camera, object, offset, controls ) {
 	offset =  offset || 1.35;
 
 
-	const boundingBox = new THREE.Box3().setFromObject(object);
-	const center = boundingBox.getCenter(new THREE.Vector3());
-	const size = boundingBox.getSize(new THREE.Vector3());
+	const boundingBox = new THREEW.Box3().setFromObject(object);
+	const center = boundingBox.getCenter(new THREEW.Vector3());
+	const size = boundingBox.getSize(new THREEW.Vector3());
 
 
 	const maxDim = Math.max( size.x, size.y, size.z );
@@ -313,7 +386,7 @@ function woo3dvFitCameraToObject( camera, object, offset, controls ) {
 
 	woo3dv.scene.updateMatrixWorld(); 
 
-        var objectWorldPosition = new THREE.Vector3(); 
+        var objectWorldPosition = new THREEW.Vector3(); 
         objectWorldPosition.setFromMatrixPosition( object.matrixWorld );
 	const directionVector = camera.position.sub(objectWorldPosition);   
         const unitDirectionVector = directionVector.normalize(); 
@@ -362,7 +435,7 @@ function woo3dvModelOnLoad(object) {
 		woo3dv.boundingBox=geometry.boundingBox;
 	}
 	else {
-	    	woo3dv.boundingBox = new THREE.Box3().setFromObject(object);
+	    	woo3dv.boundingBox = new THREEW.Box3().setFromObject(object);
 	}
 
 
@@ -372,8 +445,8 @@ function woo3dvModelOnLoad(object) {
 
 
 	if ((object.type=='Group'&& object.children.length>1) || object.type=='Scene') {
-		new THREE.Box3().setFromObject( woo3dv.object ).getCenter( woo3dv.object.position ).multiplyScalar( - 1 );
-	    	woo3dv.boundingBox = new THREE.Box3().setFromObject(object);
+		new THREEW.Box3().setFromObject( woo3dv.object ).getCenter( woo3dv.object.position ).multiplyScalar( - 1 );
+	    	woo3dv.boundingBox = new THREEW.Box3().setFromObject(object);
 	}
 	else {
 		geometry.center();
@@ -417,9 +490,9 @@ function woo3dvModelOnLoad(object) {
 	var grid_step = plane_width/100;
 
 
-	if (woo3dv.show_fog=='on') {
-		woo3dv.scene.background = new THREE.Color( parseInt(woo3dv.fog_color, 16) );
-		woo3dv.scene.fog = new THREE.Fog( parseInt(woo3dv.fog_color, 16), max_side*3, plane_width/2 ); 
+	if (woo3dv.show_fog=='on' && woo3dv.background_transparency=='off') {
+		woo3dv.scene.background = new THREEW.Color( parseInt(woo3dv.fog_color, 16) );
+		woo3dv.scene.fog = new THREEW.Fog( parseInt(woo3dv.fog_color, 16), max_side*3, plane_width/2 ); 
 	}
 //0xa0a0a0
 
@@ -436,12 +509,12 @@ function woo3dvModelOnLoad(object) {
 
 	//todo if remember camera pos
 	if (woo3dv.stored_position_x!=0 || woo3dv.stored_position_y!=0 || woo3dv.stored_position_z!=0) {//manually set 
-	        var objectWorldPosition = new THREE.Vector3(woo3dv.stored_lookat_x, woo3dv.stored_lookat_y, woo3dv.stored_lookat_z); //params?
+	        var objectWorldPosition = new THREEW.Vector3(woo3dv.stored_lookat_x, woo3dv.stored_lookat_y, woo3dv.stored_lookat_z); //params?
 	        woo3dv.camera.lookAt(objectWorldPosition); 
 
 		woo3dv.camera.position.set(woo3dv.stored_position_x, woo3dv.stored_position_y, woo3dv.stored_position_z);
 
-		woo3dv.controls.target = new THREE.Vector3(woo3dv.stored_controls_target_x, woo3dv.stored_controls_target_y, woo3dv.stored_controls_target_z); 
+		woo3dv.controls.target = new THREEW.Vector3(woo3dv.stored_controls_target_x, woo3dv.stored_controls_target_y, woo3dv.stored_controls_target_z); 
 //console.log(plane_width);
 		woo3dv.camera.far=plane_width*5;
 		woo3dv.camera.updateProjectionMatrix();
@@ -455,7 +528,7 @@ function woo3dvModelOnLoad(object) {
 //	mesh_width, mesh_height
 
 	//Ground
-	if (Detector.webgl) {
+	if (Detector.webgl && woo3dv.background_transparency=='off') {
 		if (woo3dv.ground_mirror=='on') {
 			var plane_shininess = 2500;
 			var plane_transparent = true;
@@ -467,14 +540,14 @@ function woo3dvModelOnLoad(object) {
 			var plane_opacity = 1;
 		}
 		if (woo3dvMobileCheck()) {
-			var plane_material = new THREE.MeshLambertMaterial( { color: parseInt(woo3dv.ground_color, 16), wireframe: false, flatShading:true, precision: 'mediump' } );
+			var plane_material = new THREEW.MeshLambertMaterial( { color: parseInt(woo3dv.ground_color, 16), wireframe: false, flatShading:true, precision: 'mediump' } );
 		}
 		else {
-			var plane_material = new THREE.MeshPhongMaterial ( { color: parseInt(woo3dv.ground_color, 16), transparent:plane_transparent, opacity:plane_opacity, shininess: plane_shininess, precision: 'mediump' } ) 
+			var plane_material = new THREEW.MeshPhongMaterial ( { color: parseInt(woo3dv.ground_color, 16), transparent:plane_transparent, opacity:plane_opacity, shininess: plane_shininess, precision: 'mediump' } ) 
 		}
-		plane = new THREE.Mesh(
-			new THREE.PlaneBufferGeometry( plane_width, plane_width ),
-			new THREE.MeshPhongMaterial ( { color: parseInt(woo3dv.ground_color, 16), transparent:plane_transparent, opacity:plane_opacity, shininess: plane_shininess } ) 
+		plane = new THREEW.Mesh(
+			new THREEW.PlaneBufferGeometry( plane_width, plane_width ),
+			new THREEW.MeshPhongMaterial ( { color: parseInt(woo3dv.ground_color, 16), transparent:plane_transparent, opacity:plane_opacity, shininess: plane_shininess } ) 
 		);
 		if (woo3dv.show_ground!='on') {
 			plane.visible = false;
@@ -488,9 +561,9 @@ function woo3dvModelOnLoad(object) {
 		plane.name = 'ground';
 		woo3dv.scene.add( plane );
 		if (woo3dv.ground_mirror=='on') {
-			var planeGeo = new THREE.PlaneBufferGeometry( plane_width, plane_width );
-			woo3dv.groundMirror = new THREE.Mirror( woo3dv.renderer, woo3dv.camera, { clipBias: 0.003, textureWidth: canvas_width, textureHeight: canvas_height, color: 0xaaaaaa } );
-			var mirrorMesh = new THREE.Mesh( planeGeo, woo3dv.groundMirror.material );
+			var planeGeo = new THREEW.PlaneBufferGeometry( plane_width, plane_width );
+			woo3dv.groundMirror = new THREEW.Mirror( woo3dv.renderer, woo3dv.camera, { clipBias: 0.003, textureWidth: canvas_width, textureHeight: canvas_height, color: 0xaaaaaa } );
+			var mirrorMesh = new THREEW.Mesh( planeGeo, woo3dv.groundMirror.material );
 			mirrorMesh.position.y = woo3dv.boundingBox.min.z-1;
 			mirrorMesh.add( woo3dv.groundMirror );
 			mirrorMesh.rotateX( - Math.PI / 2 );
@@ -502,31 +575,33 @@ function woo3dvModelOnLoad(object) {
 
 	if (woo3dv.object.type=='Scene') {
 		//calculate new dimensions
-		var bbox = new THREE.Box3().setFromObject(woo3dv.object);
+		var bbox = new THREEW.Box3().setFromObject(woo3dv.object);
 		var mesh_height = bbox.max.y - bbox.min.y;
 		var mesh_width = bbox.max.x - bbox.min.x;
 		var mesh_length = bbox.max.z - bbox.min.z;
-		woo3dv.object.position.y = woo3dv.scene.getObjectByName('ground').position.y
+		if (typeof(woo3dv.scene.getObjectByName('ground'))!='undefined') {
+			woo3dv.object.position.y = woo3dv.scene.getObjectByName('ground').position.y
+		}
 	}
 //	else {
 //		woo3dv.model_mesh.position.y = woo3dv.scene.getObjectByName('ground').position.y ;
 //	}
 
 	//Grid
-	if (woo3dv.show_grid=='on' && woo3dv.grid_color.length>0) {
+	if (woo3dv.show_grid=='on' && woo3dv.grid_color.length>0 && this.woo3dv.background_transparency=='off') {
 		var size = plane_width/2, step = grid_step;
-		var grid_geometry = new THREE.Geometry();
+		var grid_geometry = new THREEW.Geometry();
 		for ( var i = - size; i <= size; i += step ) {
-			grid_geometry.vertices.push( new THREE.Vector3( - size, woo3dv.boundingBox.min.z, i ) );
-			grid_geometry.vertices.push( new THREE.Vector3(   size, woo3dv.boundingBox.min.z, i ) );
-			grid_geometry.vertices.push( new THREE.Vector3( i, woo3dv.boundingBox.min.z, - size ) );
-			grid_geometry.vertices.push( new THREE.Vector3( i, woo3dv.boundingBox.min.z,   size ) );
+			grid_geometry.vertices.push( new THREEW.Vector3( - size, woo3dv.boundingBox.min.z, i ) );
+			grid_geometry.vertices.push( new THREEW.Vector3(   size, woo3dv.boundingBox.min.z, i ) );
+			grid_geometry.vertices.push( new THREEW.Vector3( i, woo3dv.boundingBox.min.z, - size ) );
+			grid_geometry.vertices.push( new THREEW.Vector3( i, woo3dv.boundingBox.min.z,   size ) );
 		
 		}
 
 
-		var grid_material = new THREE.LineBasicMaterial( { color: parseInt(woo3dv.grid_color, 16), opacity: 0.2 } );
-		var line = new THREE.LineSegments( grid_geometry, grid_material );
+		var grid_material = new THREEW.LineBasicMaterial( { color: parseInt(woo3dv.grid_color, 16), opacity: 0.2 } );
+		var line = new THREEW.LineSegments( grid_geometry, grid_material );
 		line.name = "grid";
 		woo3dv.scene.add( line );
 		woo3dv.group.add( line );
@@ -573,7 +648,7 @@ function woo3dvModelOnLoad(object) {
 }
 function woo3dvCreateMaterial(model_shading) {
 
-	var color = new THREE.Color( parseInt(woo3dv.model_color, 16) );
+	var color = new THREEW.Color( parseInt(woo3dv.model_color, 16) );
 	var shininess = woo3dvGetCurrentShininess(null);
 	var transparency = woo3dvGetCurrentTransparency(null);
 
@@ -589,11 +664,11 @@ function woo3dvCreateMaterial(model_shading) {
 		}
 
 
-		var material = new THREE.MeshPhongMaterial( { color: color, specular: shininess.specular, shininess: shininess.shininess, transparent:true, opacity:transparency, wireframe:false, flatShading:flat_shading, precision: 'mediump' } );
+		var material = new THREEW.MeshPhongMaterial( { color: color, specular: shininess.specular, shininess: shininess.shininess, transparent:true, opacity:transparency, wireframe:false, flatShading:flat_shading, precision: 'mediump' } );
 	}
 	else {
 
-		var material = new THREE.MeshLambertMaterial( { color: color, transparent:true, opacity:transparency, wireframe: false, flatShading:true, precision: 'mediump'} );
+		var material = new THREEW.MeshLambertMaterial( { color: color, transparent:true, opacity:transparency, wireframe: false, flatShading:true, precision: 'mediump'} );
 	}
 	return material;
 }
@@ -661,7 +736,7 @@ function woo3dvSetupLight(directionalLight, idx) {
 }
 
 function woo3dvCreateModel(object, geometry, material, shading) {
-	woo3dv.model_mesh = new THREE.Mesh(geometry, material);
+	woo3dv.model_mesh = new THREEW.Mesh(geometry, material);
 	if (typeof(geometry.getAttribute)!=='undefined') {
 		var attrib = geometry.getAttribute('position');
 		if(attrib === undefined) {
@@ -673,14 +748,14 @@ function woo3dvCreateModel(object, geometry, material, shading) {
 			var x = positions[i];
 			var y = positions[i + 1];
 			var z = positions[i + 2];
-			vertices.push(new THREE.Vector3(x, y, z));
+			vertices.push(new THREEW.Vector3(x, y, z));
 		}
 		var faces = [];
 		for(var i = 0, n = vertices.length; i < n; i += 3) {
-			faces.push(new THREE.Face3(i, i + 1, i + 2));
+			faces.push(new THREEW.Face3(i, i + 1, i + 2));
 		}
 
-		var new_geometry = new THREE.Geometry();
+		var new_geometry = new THREEW.Geometry();
 		new_geometry.vertices = vertices;
 		new_geometry.faces = faces;
 		new_geometry.computeFaceNormals();              
@@ -692,7 +767,7 @@ function woo3dvCreateModel(object, geometry, material, shading) {
 
 
 		if (shading=='smooth' && Detector.webgl) {
-	                var smooth_geometry = new THREE.Geometry();
+	                var smooth_geometry = new THREEW.Geometry();
 	                smooth_geometry.vertices = vertices;
 	                smooth_geometry.faces = faces;
 	                smooth_geometry.computeFaceNormals();              
@@ -700,14 +775,14 @@ function woo3dvCreateModel(object, geometry, material, shading) {
 	                smooth_geometry.computeVertexNormals();
 			smooth_geometry.computeBoundingBox();
 			geometry = smooth_geometry;
-	                woo3dv.model_mesh = new THREE.Mesh(geometry, material);
+	                woo3dv.model_mesh = new THREEW.Mesh(geometry, material);
 		}
 		else {
-			woo3dv.model_mesh = new THREE.Mesh( geometry, material );
+			woo3dv.model_mesh = new THREEW.Mesh( geometry, material );
 		}
 	}
 	else {
-		woo3dv.model_mesh = new THREE.Mesh(geometry, material);
+		woo3dv.model_mesh = new THREEW.Mesh(geometry, material);
 	}
 
 	if (woo3dv.object.type=='Group') { //obj
@@ -791,7 +866,7 @@ function woo3dvCreateModel(object, geometry, material, shading) {
 
 function woo3dvMakeLight(idx) {
 	var intensity = woo3dvGetLightIntensity();
-	var directionalLight = new THREE.DirectionalLight( 0xffffff, intensity );
+	var directionalLight = new THREEW.DirectionalLight( 0xffffff, intensity );
 	directionalLight.name = "light"+idx;
 	return directionalLight;
 }
@@ -1022,7 +1097,7 @@ function woo3dvRotateModel(axis, degree) {
 	if (typeof(woo3dv.scene.getObjectByName('ground'))!=='undefined' || woo3dv.object.type=='Scene') {
 		if (woo3dv.object.type=='Group') {
 			//calculate new dimensions
-			var bbox = new THREE.Box3().setFromObject(woo3dv.object);
+			var bbox = new THREEW.Box3().setFromObject(woo3dv.object);
 			var mesh_height = bbox.max.y - bbox.min.y;
 			var mesh_width = bbox.max.x - bbox.min.x;
 			var mesh_length = bbox.max.z - bbox.min.z;
@@ -1030,7 +1105,7 @@ function woo3dvRotateModel(axis, degree) {
 		}
 		else if (woo3dv.object.type=='Scene') {
 			//calculate new dimensions
-			var bbox = new THREE.Box3().setFromObject(woo3dv.object);
+			var bbox = new THREEW.Box3().setFromObject(woo3dv.object);
 			var mesh_height = bbox.max.y - bbox.min.y;
 			var mesh_width = bbox.max.x - bbox.min.x;
 			var mesh_length = bbox.max.z - bbox.min.z;
@@ -1038,7 +1113,7 @@ function woo3dvRotateModel(axis, degree) {
 		}
 		else {
 			//calculate new dimensions
-			var bbox = new THREE.Box3().setFromObject(woo3dv.model_mesh);
+			var bbox = new THREEW.Box3().setFromObject(woo3dv.model_mesh);
 			var mesh_height = bbox.max.y - bbox.min.y;
 			var mesh_width = bbox.max.x - bbox.min.x;
 			var mesh_length = bbox.max.z - bbox.min.z;

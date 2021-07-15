@@ -15,16 +15,16 @@
 'use strict';
 
 /**
- * @param {THREE.LoadingManager} manager
+ * @param {THREEW.LoadingManager} manager
  */
-THREE.DRACOLoader = function(manager) {
+THREEW.DRACOLoader = function(manager) {
     this.timeLoaded = 0;
-    this.manager = manager || THREE.DefaultLoadingManager;
+    this.manager = manager || THREEW.DefaultLoadingManager;
     this.materials = null;
     this.verbosity = 0;
     this.attributeOptions = {};
-    this.drawMode = THREE.TrianglesDrawMode;
-    // Native Draco attribute type to Three.JS attribute type.
+    this.drawMode = THREEW.TrianglesDrawMode;
+    // Native Draco attribute type to THREEW.JS attribute type.
     this.nativeAttributeMap = {
       'position' : 'POSITION',
       'normal' : 'NORMAL',
@@ -33,13 +33,13 @@ THREE.DRACOLoader = function(manager) {
     };
 };
 
-THREE.DRACOLoader.prototype = {
+THREEW.DRACOLoader.prototype = {
 
-    constructor: THREE.DRACOLoader,
+    constructor: THREEW.DRACOLoader,
 
     load: function(url, onLoad, onProgress, onError) {
         var scope = this;
-        var loader = new THREE.FileLoader(scope.manager);
+        var loader = new THREEW.FileLoader(scope.manager);
         loader.setPath(this.path);
         loader.setResponseType('arraybuffer');
         loader.load(url, function(blob) {
@@ -60,8 +60,8 @@ THREE.DRACOLoader.prototype = {
     /**
      *  Sets desired mode for generated geometry indices.
      *  Can be either:
-     *      THREE.TrianglesDrawMode
-     *      THREE.TriangleStripDrawMode
+     *      THREEW.TrianglesDrawMode
+     *      THREEW.TriangleStripDrawMode
      */
     setDrawMode: function(drawMode) {
         this.drawMode = drawMode;
@@ -70,7 +70,7 @@ THREE.DRACOLoader.prototype = {
 
     /**
      * Skips dequantization for a specific attribute.
-     * |attributeName| is the THREE.js name of the given attribute type.
+     * |attributeName| is the THREEW.js name of the given attribute type.
      * The only currently supported |attributeName| is 'position', more may be
      * added in future.
      */
@@ -85,7 +85,7 @@ THREE.DRACOLoader.prototype = {
 
     /**
      * Decompresses a Draco buffer. Names of attributes (for ID and type maps)
-     * must be one of the supported three.js types, including: position, color,
+     * must be one of the supported THREEW.js types, including: position, color,
      * normal, uv, uv2, skinIndex, skinWeight.
      *
      * @param {ArrayBuffer} rawBuffer
@@ -101,7 +101,7 @@ THREE.DRACOLoader.prototype = {
     decodeDracoFile: function(rawBuffer, callback, attributeUniqueIdMap,
                               attributeTypeMap) {
       var scope = this;
-      THREE.DRACOLoader.getDecoderModule()
+      THREEW.DRACOLoader.getDecoderModule()
           .then( function ( module ) {
             scope.decodeDracoFileInternal( rawBuffer, module.decoder, callback,
               attributeUniqueIdMap, attributeTypeMap);
@@ -130,7 +130,7 @@ THREE.DRACOLoader.prototype = {
           console.log('Loaded a point cloud.');
         }
       } else {
-        var errorMsg = 'THREE.DRACOLoader: Unknown geometry type.';
+        var errorMsg = 'THREEW.DRACOLoader: Unknown geometry type.';
         console.error(errorMsg);
         throw new Error(errorMsg);
       }
@@ -142,7 +142,7 @@ THREE.DRACOLoader.prototype = {
                                      attributeName, attributeType, attribute,
                                      geometry, geometryBuffer) {
       if (attribute.ptr === 0) {
-        var errorMsg = 'THREE.DRACOLoader: No attribute ' + attributeName;
+        var errorMsg = 'THREEW.DRACOLoader: No attribute ' + attributeName;
         console.error(errorMsg);
         throw new Error(errorMsg);
       }
@@ -160,7 +160,7 @@ THREE.DRACOLoader.prototype = {
           decoder.GetAttributeFloatForAllPoints(
             dracoGeometry, attribute, attributeData);
           geometryBuffer[ attributeName ] = new Float32Array( numValues );
-          TypedBufferAttribute = THREE.Float32BufferAttribute;
+          TypedBufferAttribute = THREEW.Float32BufferAttribute;
           break;
 
         case Int8Array:
@@ -168,7 +168,7 @@ THREE.DRACOLoader.prototype = {
           decoder.GetAttributeInt8ForAllPoints(
             dracoGeometry, attribute, attributeData );
           geometryBuffer[ attributeName ] = new Int8Array( numValues );
-          TypedBufferAttribute = THREE.Int8BufferAttribute;
+          TypedBufferAttribute = THREEW.Int8BufferAttribute;
           break;
 
         case Int16Array:
@@ -176,7 +176,7 @@ THREE.DRACOLoader.prototype = {
           decoder.GetAttributeInt16ForAllPoints(
             dracoGeometry, attribute, attributeData);
           geometryBuffer[ attributeName ] = new Int16Array( numValues );
-          TypedBufferAttribute = THREE.Int16BufferAttribute;
+          TypedBufferAttribute = THREEW.Int16BufferAttribute;
           break;
 
         case Int32Array:
@@ -184,7 +184,7 @@ THREE.DRACOLoader.prototype = {
           decoder.GetAttributeInt32ForAllPoints(
             dracoGeometry, attribute, attributeData);
           geometryBuffer[ attributeName ] = new Int32Array( numValues );
-          TypedBufferAttribute = THREE.Int32BufferAttribute;
+          TypedBufferAttribute = THREEW.Int32BufferAttribute;
           break;
 
         case Uint8Array:
@@ -192,7 +192,7 @@ THREE.DRACOLoader.prototype = {
           decoder.GetAttributeUInt8ForAllPoints(
             dracoGeometry, attribute, attributeData);
           geometryBuffer[ attributeName ] = new Uint8Array( numValues );
-          TypedBufferAttribute = THREE.Uint8BufferAttribute;
+          TypedBufferAttribute = THREEW.Uint8BufferAttribute;
           break;
 
         case Uint16Array:
@@ -200,7 +200,7 @@ THREE.DRACOLoader.prototype = {
           decoder.GetAttributeUInt16ForAllPoints(
             dracoGeometry, attribute, attributeData);
           geometryBuffer[ attributeName ] = new Uint16Array( numValues );
-          TypedBufferAttribute = THREE.Uint16BufferAttribute;
+          TypedBufferAttribute = THREEW.Uint16BufferAttribute;
           break;
 
         case Uint32Array:
@@ -208,11 +208,11 @@ THREE.DRACOLoader.prototype = {
           decoder.GetAttributeUInt32ForAllPoints(
             dracoGeometry, attribute, attributeData);
           geometryBuffer[ attributeName ] = new Uint32Array( numValues );
-          TypedBufferAttribute = THREE.Uint32BufferAttribute;
+          TypedBufferAttribute = THREEW.Uint32BufferAttribute;
           break;
 
         default:
-          var errorMsg = 'THREE.DRACOLoader: Unexpected attribute type.';
+          var errorMsg = 'THREEW.DRACOLoader: Unexpected attribute type.';
           console.error( errorMsg );
           throw new Error( errorMsg );
 
@@ -248,7 +248,7 @@ THREE.DRACOLoader.prototype = {
               decoder.DecodeBufferToPointCloud(buffer, dracoGeometry);
         }
         if (!decodingStatus.ok() || dracoGeometry.ptr == 0) {
-          var errorMsg = 'THREE.DRACOLoader: Decoding failed: ';
+          var errorMsg = 'THREEW.DRACOLoader: Decoding failed: ';
           errorMsg += decodingStatus.error_msg();
           console.error(errorMsg);
           dracoDecoder.destroy(decoder);
@@ -284,7 +284,7 @@ THREE.DRACOLoader.prototype = {
         var posAttId = decoder.GetAttributeId(dracoGeometry,
                                               dracoDecoder.POSITION);
         if (posAttId == -1) {
-          var errorMsg = 'THREE.DRACOLoader: No position attribute found.';
+          var errorMsg = 'THREEW.DRACOLoader: No position attribute found.';
           console.error(errorMsg);
           dracoDecoder.destroy(decoder);
           dracoDecoder.destroy(dracoGeometry);
@@ -295,7 +295,7 @@ THREE.DRACOLoader.prototype = {
         // Structure for converting to THREEJS geometry later.
         var geometryBuffer = {};
         // Import data to Three JS geometry.
-        var geometry = new THREE.BufferGeometry();
+        var geometry = new THREEW.BufferGeometry();
 
         // Do not use both the native attribute map and a provided (e.g. glTF) map.
         if ( attributeUniqueIdMap ) {
@@ -330,7 +330,7 @@ THREE.DRACOLoader.prototype = {
 
         // For mesh, we need to generate the faces.
         if (geometryType == dracoDecoder.TRIANGULAR_MESH) {
-          if (this.drawMode === THREE.TriangleStripDrawMode) {
+          if (this.drawMode === THREEW.TriangleStripDrawMode) {
             var stripsArray = new dracoDecoder.DracoInt32Array();
             var numStrips = decoder.GetTriangleStripsFromMesh(
                 dracoGeometry, stripsArray);
@@ -357,7 +357,7 @@ THREE.DRACOLoader.prototype = {
         geometry.drawMode = this.drawMode;
         if (geometryType == dracoDecoder.TRIANGULAR_MESH) {
           geometry.setIndex(new(geometryBuffer.indices.length > 65535 ?
-                THREE.Uint32BufferAttribute : THREE.Uint16BufferAttribute)
+                THREEW.Uint32BufferAttribute : THREEW.Uint16BufferAttribute)
               (geometryBuffer.indices, 1));
         }
 
@@ -366,7 +366,7 @@ THREE.DRACOLoader.prototype = {
         var posTransform = new dracoDecoder.AttributeQuantizationTransform();
         if (posTransform.InitFromAttribute(posAttribute)) {
           // Quantized attribute. Store the quantization parameters into the
-          // THREE.js attribute.
+          // THREEW.js attribute.
           geometry.attributes['position'].isQuantized = true;
           geometry.attributes['position'].maxRange = posTransform.range();
           geometry.attributes['position'].numQuantizationBits =
@@ -392,7 +392,7 @@ THREE.DRACOLoader.prototype = {
     },
 
     isVersionSupported: function(version, callback) {
-        THREE.DRACOLoader.getDecoderModule()
+        THREEW.DRACOLoader.getDecoderModule()
             .then( function ( module ) {
               callback( module.decoder.isVersionSupported( version ) );
             });
@@ -405,16 +405,16 @@ THREE.DRACOLoader.prototype = {
     }
 };
 
-THREE.DRACOLoader.decoderPath = './';
-THREE.DRACOLoader.decoderConfig = {};
-THREE.DRACOLoader.decoderModulePromise = null;
+THREEW.DRACOLoader.decoderPath = './';
+THREEW.DRACOLoader.decoderConfig = {};
+THREEW.DRACOLoader.decoderModulePromise = null;
 
 /**
  * Sets the base path for decoder source files.
  * @param {string} path
  */
-THREE.DRACOLoader.setDecoderPath = function ( path ) {
-  THREE.DRACOLoader.decoderPath = path;
+THREEW.DRACOLoader.setDecoderPath = function ( path ) {
+  THREEW.DRACOLoader.decoderPath = path;
 };
 
 /**
@@ -422,21 +422,21 @@ THREE.DRACOLoader.setDecoderPath = function ( path ) {
  * will be recreated with the next decoding call.
  * @param {Object} config
  */
-THREE.DRACOLoader.setDecoderConfig = function ( config ) {
-  var wasmBinary = THREE.DRACOLoader.decoderConfig.wasmBinary;
-  THREE.DRACOLoader.decoderConfig = config || {};
-  THREE.DRACOLoader.releaseDecoderModule();
+THREEW.DRACOLoader.setDecoderConfig = function ( config ) {
+  var wasmBinary = THREEW.DRACOLoader.decoderConfig.wasmBinary;
+  THREEW.DRACOLoader.decoderConfig = config || {};
+  THREEW.DRACOLoader.releaseDecoderModule();
 
   // Reuse WASM binary.
-  if ( wasmBinary ) THREE.DRACOLoader.decoderConfig.wasmBinary = wasmBinary;
+  if ( wasmBinary ) THREEW.DRACOLoader.decoderConfig.wasmBinary = wasmBinary;
 };
 
 /**
  * Releases the singleton DracoDecoderModule instance. Module will be recreated
  * with the next decoding call.
  */
-THREE.DRACOLoader.releaseDecoderModule = function () {
-  THREE.DRACOLoader.decoderModulePromise = null;
+THREEW.DRACOLoader.releaseDecoderModule = function () {
+  THREEW.DRACOLoader.decoderModulePromise = null;
 };
 
 /**
@@ -445,11 +445,11 @@ THREE.DRACOLoader.releaseDecoderModule = function () {
  * module is available.
  * @return {Promise<{decoder: DracoDecoderModule}>}
  */
-THREE.DRACOLoader.getDecoderModule = function () {
+THREEW.DRACOLoader.getDecoderModule = function () {
   var scope = this;
-  var path = THREE.DRACOLoader.decoderPath;
-  var config = THREE.DRACOLoader.decoderConfig;
-  var promise = THREE.DRACOLoader.decoderModulePromise;
+  var path = THREEW.DRACOLoader.decoderPath;
+  var config = THREEW.DRACOLoader.decoderConfig;
+  var promise = THREEW.DRACOLoader.decoderModulePromise;
 
   if ( promise ) return promise;
 
@@ -459,13 +459,13 @@ THREE.DRACOLoader.getDecoderModule = function () {
     promise = Promise.resolve();
   } else if ( typeof WebAssembly !== 'object' || config.type === 'js' ) {
     // Load with asm.js.
-    promise = THREE.DRACOLoader._loadScript( path + 'draco_decoder.js' );
+    promise = THREEW.DRACOLoader._loadScript( path + 'draco_decoder.js' );
   } else {
     // Load with WebAssembly.
     config.wasmBinaryFile = path + 'draco_decoder.wasm';
-    promise = THREE.DRACOLoader._loadScript( path + 'draco_wasm_wrapper.js' )
+    promise = THREEW.DRACOLoader._loadScript( path + 'draco_wasm_wrapper.js' )
         .then( function () {
-          return THREE.DRACOLoader._loadArrayBuffer( config.wasmBinaryFile );
+          return THREEW.DRACOLoader._loadArrayBuffer( config.wasmBinaryFile );
         } )
         .then( function ( wasmBinary ) {
           config.wasmBinary = wasmBinary;
@@ -484,7 +484,7 @@ THREE.DRACOLoader.getDecoderModule = function () {
     } );
   } );
 
-  THREE.DRACOLoader.decoderModulePromise = promise;
+  THREEW.DRACOLoader.decoderModulePromise = promise;
   return promise;
 };
 
@@ -492,7 +492,7 @@ THREE.DRACOLoader.getDecoderModule = function () {
  * @param {string} src
  * @return {Promise}
  */
-THREE.DRACOLoader._loadScript = function ( src ) {
+THREEW.DRACOLoader._loadScript = function ( src ) {
   var prevScript = document.getElementById( 'decoder_script' );
   if ( prevScript !== null ) {
     prevScript.parentNode.removeChild( prevScript );
@@ -512,8 +512,8 @@ THREE.DRACOLoader._loadScript = function ( src ) {
  * @param {string} src
  * @return {Promise}
  */
-THREE.DRACOLoader._loadArrayBuffer = function ( src ) {
-  var loader = new THREE.FileLoader();
+THREEW.DRACOLoader._loadArrayBuffer = function ( src ) {
+  var loader = new THREEW.FileLoader();
   loader.setResponseType( 'arraybuffer' );
   return new Promise( function( resolve, reject ) {
     loader.load( src, resolve, undefined, reject );

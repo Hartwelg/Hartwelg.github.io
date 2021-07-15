@@ -16,35 +16,35 @@
  *  ASCII decoding assumes file is UTF-8.
  *
  * Usage:
- *  var loader = new THREE.STLLoader();
+ *  var loader = new THREEW.STLLoader();
  *  loader.load( './models/stl/slotted_disk.stl', function ( geometry ) {
- *    scene.add( new THREE.Mesh( geometry ) );
+ *    scene.add( new THREEW.Mesh( geometry ) );
  *  });
  *
  * For binary STLs geometry might contain colors for vertices. To use it:
  *  // use the same code to load STL as above
  *  if (geometry.hasColors) {
- *    material = new THREE.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREE.VertexColors });
+ *    material = new THREEW.MeshPhongMaterial({ opacity: geometry.alpha, vertexColors: THREEW.VertexColors });
  *  } else { .... }
- *  var mesh = new THREE.Mesh( geometry, material );
+ *  var mesh = new THREEW.Mesh( geometry, material );
  */
 
 
-THREE.STLLoader = function ( manager ) {
+THREEW.STLLoader = function ( manager ) {
 
-	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
+	this.manager = ( manager !== undefined ) ? manager : THREEW.DefaultLoadingManager;
 
 };
 
-THREE.STLLoader.prototype = {
+THREEW.STLLoader.prototype = {
 
-	constructor: THREE.STLLoader,
+	constructor: THREEW.STLLoader,
 
 	load: function ( url, onLoad, onProgress, onError ) {
 
 		var scope = this;
 
-		var loader = new THREE.FileLoader( scope.manager );
+		var loader = new THREEW.FileLoader( scope.manager );
 		loader.setPath( scope.path );
 		loader.setResponseType( 'arraybuffer' );
 		loader.load( url, function ( text ) {
@@ -162,7 +162,7 @@ THREE.STLLoader.prototype = {
 			var dataOffset = 84;
 			var faceLength = 12 * 4 + 2;
 
-			var geometry = new THREE.BufferGeometry();
+			var geometry = new THREEW.BufferGeometry();
 
 			var vertices = [];
 			var normals = [];
@@ -216,12 +216,12 @@ THREE.STLLoader.prototype = {
 
 			}
 
-			geometry.addAttribute( 'position', new THREE.BufferAttribute( new Float32Array( vertices ), 3 ) );
-			geometry.addAttribute( 'normal', new THREE.BufferAttribute( new Float32Array( normals ), 3 ) );
+			geometry.addAttribute( 'position', new THREEW.BufferAttribute( new Float32Array( vertices ), 3 ) );
+			geometry.addAttribute( 'normal', new THREEW.BufferAttribute( new Float32Array( normals ), 3 ) );
 
 			if ( hasColors ) {
 
-				geometry.addAttribute( 'color', new THREE.BufferAttribute( new Float32Array( colors ), 3 ) );
+				geometry.addAttribute( 'color', new THREEW.BufferAttribute( new Float32Array( colors ), 3 ) );
 				geometry.hasColors = true;
 				geometry.alpha = alpha;
 
@@ -233,7 +233,7 @@ THREE.STLLoader.prototype = {
 
 		function parseASCII( data ) {
 
-			var geometry = new THREE.BufferGeometry();
+			var geometry = new THREEW.BufferGeometry();
 			var patternFace = /facet([\s\S]*?)endfacet/g;
 			var faceCounter = 0;
 
@@ -244,7 +244,7 @@ THREE.STLLoader.prototype = {
 			var vertices = [];
 			var normals = [];
 
-			var normal = new THREE.Vector3();
+			var normal = new THREEW.Vector3();
 
 			var result;
 
@@ -276,7 +276,7 @@ THREE.STLLoader.prototype = {
 
 				if ( normalCountPerFace !== 1 ) {
 
-					console.error( 'THREE.STLLoader: Something isn\'t right with the normal of face number ' + faceCounter );
+					console.error( 'THREEW.STLLoader: Something isn\'t right with the normal of face number ' + faceCounter );
 
 				}
 
@@ -284,7 +284,7 @@ THREE.STLLoader.prototype = {
 
 				if ( vertexCountPerFace !== 3 ) {
 
-					console.error( 'THREE.STLLoader: Something isn\'t right with the vertices of face number ' + faceCounter );
+					console.error( 'THREEW.STLLoader: Something isn\'t right with the vertices of face number ' + faceCounter );
 
 				}
 
@@ -292,8 +292,8 @@ THREE.STLLoader.prototype = {
 
 			}
 
-			geometry.addAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
-			geometry.addAttribute( 'normal', new THREE.Float32BufferAttribute( normals, 3 ) );
+			geometry.addAttribute( 'position', new THREEW.Float32BufferAttribute( vertices, 3 ) );
+			geometry.addAttribute( 'normal', new THREEW.Float32BufferAttribute( normals, 3 ) );
 
 			return geometry;
 
@@ -303,7 +303,7 @@ THREE.STLLoader.prototype = {
 
 			if ( typeof buffer !== 'string' ) {
 
-				return THREE.LoaderUtils.decodeText( new Uint8Array( buffer ) );
+				return THREEW.LoaderUtils.decodeText( new Uint8Array( buffer ) );
 
 			}
 

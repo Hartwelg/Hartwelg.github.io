@@ -4,7 +4,7 @@
  * @author julianwa / https://github.com/julianwa
  */
 
-THREE.RenderableObject = function () {
+THREEW.RenderableObject = function () {
 
 	this.id = 0;
 
@@ -16,22 +16,22 @@ THREE.RenderableObject = function () {
 
 //
 
-THREE.RenderableFace = function () {
+THREEW.RenderableFace = function () {
 
 	this.id = 0;
 
-	this.v1 = new THREE.RenderableVertex();
-	this.v2 = new THREE.RenderableVertex();
-	this.v3 = new THREE.RenderableVertex();
+	this.v1 = new THREEW.RenderableVertex();
+	this.v2 = new THREEW.RenderableVertex();
+	this.v3 = new THREEW.RenderableVertex();
 
-	this.normalModel = new THREE.Vector3();
+	this.normalModel = new THREEW.Vector3();
 
-	this.vertexNormalsModel = [ new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3() ];
+	this.vertexNormalsModel = [ new THREEW.Vector3(), new THREEW.Vector3(), new THREEW.Vector3() ];
 	this.vertexNormalsLength = 0;
 
-	this.color = new THREE.Color();
+	this.color = new THREEW.Color();
 	this.material = null;
-	this.uvs = [ new THREE.Vector2(), new THREE.Vector2(), new THREE.Vector2() ];
+	this.uvs = [ new THREEW.Vector2(), new THREEW.Vector2(), new THREEW.Vector2() ];
 
 	this.z = 0;
 	this.renderOrder = 0;
@@ -40,17 +40,17 @@ THREE.RenderableFace = function () {
 
 //
 
-THREE.RenderableVertex = function () {
+THREEW.RenderableVertex = function () {
 
-	this.position = new THREE.Vector3();
-	this.positionWorld = new THREE.Vector3();
-	this.positionScreen = new THREE.Vector4();
+	this.position = new THREEW.Vector3();
+	this.positionWorld = new THREEW.Vector3();
+	this.positionScreen = new THREEW.Vector4();
 
 	this.visible = true;
 
 };
 
-THREE.RenderableVertex.prototype.copy = function ( vertex ) {
+THREEW.RenderableVertex.prototype.copy = function ( vertex ) {
 
 	this.positionWorld.copy( vertex.positionWorld );
 	this.positionScreen.copy( vertex.positionScreen );
@@ -59,14 +59,14 @@ THREE.RenderableVertex.prototype.copy = function ( vertex ) {
 
 //
 
-THREE.RenderableLine = function () {
+THREEW.RenderableLine = function () {
 
 	this.id = 0;
 
-	this.v1 = new THREE.RenderableVertex();
-	this.v2 = new THREE.RenderableVertex();
+	this.v1 = new THREEW.RenderableVertex();
+	this.v2 = new THREEW.RenderableVertex();
 
-	this.vertexColors = [ new THREE.Color(), new THREE.Color() ];
+	this.vertexColors = [ new THREEW.Color(), new THREEW.Color() ];
 	this.material = null;
 
 	this.z = 0;
@@ -76,7 +76,7 @@ THREE.RenderableLine = function () {
 
 //
 
-THREE.RenderableSprite = function () {
+THREEW.RenderableSprite = function () {
 
 	this.id = 0;
 
@@ -87,7 +87,7 @@ THREE.RenderableSprite = function () {
 	this.z = 0;
 
 	this.rotation = 0;
-	this.scale = new THREE.Vector2();
+	this.scale = new THREEW.Vector2();
 
 	this.material = null;
 	this.renderOrder = 0;
@@ -96,7 +96,7 @@ THREE.RenderableSprite = function () {
 
 //
 
-THREE.Projector = function () {
+THREEW.Projector = function () {
 
 	var _object, _objectCount, _objectPool = [], _objectPoolLength = 0,
 		_vertex, _vertexCount, _vertexPool = [], _vertexPoolLength = 0,
@@ -106,45 +106,45 @@ THREE.Projector = function () {
 
 		_renderData = { objects: [], lights: [], elements: [] },
 
-		_vector3 = new THREE.Vector3(),
-		_vector4 = new THREE.Vector4(),
+		_vector3 = new THREEW.Vector3(),
+		_vector4 = new THREEW.Vector4(),
 
-		_clipBox = new THREE.Box3( new THREE.Vector3( - 1, - 1, - 1 ), new THREE.Vector3( 1, 1, 1 ) ),
-		_boundingBox = new THREE.Box3(),
+		_clipBox = new THREEW.Box3( new THREEW.Vector3( - 1, - 1, - 1 ), new THREEW.Vector3( 1, 1, 1 ) ),
+		_boundingBox = new THREEW.Box3(),
 		_points3 = new Array( 3 ),
 
-		_viewMatrix = new THREE.Matrix4(),
-		_viewProjectionMatrix = new THREE.Matrix4(),
+		_viewMatrix = new THREEW.Matrix4(),
+		_viewProjectionMatrix = new THREEW.Matrix4(),
 
 		_modelMatrix,
-		_modelViewProjectionMatrix = new THREE.Matrix4(),
+		_modelViewProjectionMatrix = new THREEW.Matrix4(),
 
-		_normalMatrix = new THREE.Matrix3(),
+		_normalMatrix = new THREEW.Matrix3(),
 
-		_frustum = new THREE.Frustum(),
+		_frustum = new THREEW.Frustum(),
 
-		_clippedVertex1PositionScreen = new THREE.Vector4(),
-		_clippedVertex2PositionScreen = new THREE.Vector4();
+		_clippedVertex1PositionScreen = new THREEW.Vector4(),
+		_clippedVertex2PositionScreen = new THREEW.Vector4();
 
 	//
 
 	this.projectVector = function ( vector, camera ) {
 
-		console.warn( 'THREE.Projector: .projectVector() is now vector.project().' );
+		console.warn( 'THREEW.Projector: .projectVector() is now vector.project().' );
 		vector.project( camera );
 
 	};
 
 	this.unprojectVector = function ( vector, camera ) {
 
-		console.warn( 'THREE.Projector: .unprojectVector() is now vector.unproject().' );
+		console.warn( 'THREEW.Projector: .unprojectVector() is now vector.unproject().' );
 		vector.unproject( camera );
 
 	};
 
 	this.pickingRay = function () {
 
-		console.error( 'THREE.Projector: .pickingRay() is now raycaster.setFromCamera().' );
+		console.error( 'THREEW.Projector: .pickingRay() is now raycaster.setFromCamera().' );
 
 	};
 
@@ -159,7 +159,7 @@ THREE.Projector = function () {
 		var object = null;
 		var material = null;
 
-		var normalMatrix = new THREE.Matrix3();
+		var normalMatrix = new THREEW.Matrix3();
 
 		function setObject( value ) {
 
@@ -268,7 +268,7 @@ THREE.Projector = function () {
 
 				_line.material = object.material;
 
-				if ( object.material.vertexColors === THREE.VertexColors ) {
+				if ( object.material.vertexColors === THREEW.VertexColors ) {
 
 					_line.vertexColors[ 0 ].fromArray( colors, a * 3 );
 					_line.vertexColors[ 1 ].fromArray( colors, b * 3 );
@@ -289,7 +289,7 @@ THREE.Projector = function () {
 
 			if ( checkTriangleVisibility( v1, v2, v3 ) === false ) return;
 
-			if ( material.side === THREE.DoubleSide || checkBackfaceCulling( v1, v2, v3 ) === true ) {
+			if ( material.side === THREEW.DoubleSide || checkBackfaceCulling( v1, v2, v3 ) === true ) {
 
 				_face = getNextFaceInPool();
 
@@ -322,7 +322,7 @@ THREE.Projector = function () {
 
 				_face.material = material;
 
-				if ( material.vertexColors === THREE.FaceColors || material.vertexColors === THREE.VertexColors ) {
+				if ( material.vertexColors === THREEW.FaceColors || material.vertexColors === THREEW.VertexColors ) {
 
 					_face.color.fromArray( colors, a * 3 );
 
@@ -355,18 +355,18 @@ THREE.Projector = function () {
 
 		if ( object.visible === false ) return;
 
-		if ( object instanceof THREE.Light ) {
+		if ( object instanceof THREEW.Light ) {
 
 			_renderData.lights.push( object );
 
-		} else if ( object instanceof THREE.Mesh || object instanceof THREE.Line || object instanceof THREE.Points ) {
+		} else if ( object instanceof THREEW.Mesh || object instanceof THREEW.Line || object instanceof THREEW.Points ) {
 
 			if ( object.material.visible === false ) return;
 			if ( object.frustumCulled === true && _frustum.intersectsObject( object ) === false ) return;
 
 			addObject( object );
 
-		} else if ( object instanceof THREE.Sprite ) {
+		} else if ( object instanceof THREEW.Sprite ) {
 
 			if ( object.material.visible === false ) return;
 			if ( object.frustumCulled === true && _frustum.intersectsSprite( object ) === false ) return;
@@ -446,9 +446,9 @@ THREE.Projector = function () {
 
 			_vertexCount = 0;
 
-			if ( object instanceof THREE.Mesh ) {
+			if ( object instanceof THREEW.Mesh ) {
 
-				if ( geometry instanceof THREE.BufferGeometry ) {
+				if ( geometry instanceof THREEW.BufferGeometry ) {
 
 					var material = object.material;
 
@@ -607,7 +607,7 @@ THREE.Projector = function () {
 
 					}
 
-				} else if ( geometry instanceof THREE.Geometry ) {
+				} else if ( geometry instanceof THREEW.Geometry ) {
 
 					var vertices = geometry.vertices;
 					var faces = geometry.faces;
@@ -671,10 +671,10 @@ THREE.Projector = function () {
 
 						var visible = renderList.checkBackfaceCulling( v1, v2, v3 );
 
-						if ( side !== THREE.DoubleSide ) {
+						if ( side !== THREEW.DoubleSide ) {
 
-							if ( side === THREE.FrontSide && visible === false ) continue;
-							if ( side === THREE.BackSide && visible === true ) continue;
+							if ( side === THREEW.FrontSide && visible === false ) continue;
+							if ( side === THREEW.BackSide && visible === true ) continue;
 
 						}
 
@@ -687,7 +687,7 @@ THREE.Projector = function () {
 
 						_face.normalModel.copy( face.normal );
 
-						if ( visible === false && ( side === THREE.BackSide || side === THREE.DoubleSide ) ) {
+						if ( visible === false && ( side === THREEW.BackSide || side === THREEW.DoubleSide ) ) {
 
 							_face.normalModel.negate();
 
@@ -702,7 +702,7 @@ THREE.Projector = function () {
 							var normalModel = _face.vertexNormalsModel[ n ];
 							normalModel.copy( faceVertexNormals[ n ] );
 
-							if ( visible === false && ( side === THREE.BackSide || side === THREE.DoubleSide ) ) {
+							if ( visible === false && ( side === THREEW.BackSide || side === THREEW.DoubleSide ) ) {
 
 								normalModel.negate();
 
@@ -738,11 +738,11 @@ THREE.Projector = function () {
 
 				}
 
-			} else if ( object instanceof THREE.Line ) {
+			} else if ( object instanceof THREEW.Line ) {
 
 				_modelViewProjectionMatrix.multiplyMatrices( _viewProjectionMatrix, _modelMatrix );
 
-				if ( geometry instanceof THREE.BufferGeometry ) {
+				if ( geometry instanceof THREEW.BufferGeometry ) {
 
 					var attributes = geometry.attributes;
 
@@ -780,7 +780,7 @@ THREE.Projector = function () {
 
 						} else {
 
-							var step = object instanceof THREE.LineSegments ? 2 : 1;
+							var step = object instanceof THREEW.LineSegments ? 2 : 1;
 
 							for ( var i = 0, l = ( positions.length / 3 ) - 1; i < l; i += step ) {
 
@@ -792,7 +792,7 @@ THREE.Projector = function () {
 
 					}
 
-				} else if ( geometry instanceof THREE.Geometry ) {
+				} else if ( geometry instanceof THREEW.Geometry ) {
 
 					var vertices = object.geometry.vertices;
 
@@ -801,7 +801,7 @@ THREE.Projector = function () {
 					v1 = getNextVertexInPool();
 					v1.positionScreen.copy( vertices[ 0 ] ).applyMatrix4( _modelViewProjectionMatrix );
 
-					var step = object instanceof THREE.LineSegments ? 2 : 1;
+					var step = object instanceof THREEW.LineSegments ? 2 : 1;
 
 					for ( var v = 1, vl = vertices.length; v < vl; v ++ ) {
 
@@ -832,7 +832,7 @@ THREE.Projector = function () {
 
 							_line.material = object.material;
 
-							if ( object.material.vertexColors === THREE.VertexColors ) {
+							if ( object.material.vertexColors === THREEW.VertexColors ) {
 
 								_line.vertexColors[ 0 ].copy( object.geometry.colors[ v ] );
 								_line.vertexColors[ 1 ].copy( object.geometry.colors[ v - 1 ] );
@@ -847,11 +847,11 @@ THREE.Projector = function () {
 
 				}
 
-			} else if ( object instanceof THREE.Points ) {
+			} else if ( object instanceof THREEW.Points ) {
 
 				_modelViewProjectionMatrix.multiplyMatrices( _viewProjectionMatrix, _modelMatrix );
 
-				if ( geometry instanceof THREE.Geometry ) {
+				if ( geometry instanceof THREEW.Geometry ) {
 
 					var vertices = object.geometry.vertices;
 
@@ -866,7 +866,7 @@ THREE.Projector = function () {
 
 					}
 
-				} else if ( geometry instanceof THREE.BufferGeometry ) {
+				} else if ( geometry instanceof THREEW.BufferGeometry ) {
 
 					var attributes = geometry.attributes;
 
@@ -887,7 +887,7 @@ THREE.Projector = function () {
 
 				}
 
-			} else if ( object instanceof THREE.Sprite ) {
+			} else if ( object instanceof THREEW.Sprite ) {
 
 				object.modelViewMatrix.multiplyMatrices( camera.matrixWorldInverse, object.matrixWorld );
 				_vector4.set( _modelMatrix.elements[ 12 ], _modelMatrix.elements[ 13 ], _modelMatrix.elements[ 14 ], 1 );
@@ -944,7 +944,7 @@ THREE.Projector = function () {
 
 		if ( _objectCount === _objectPoolLength ) {
 
-			var object = new THREE.RenderableObject();
+			var object = new THREEW.RenderableObject();
 			_objectPool.push( object );
 			_objectPoolLength ++;
 			_objectCount ++;
@@ -960,7 +960,7 @@ THREE.Projector = function () {
 
 		if ( _vertexCount === _vertexPoolLength ) {
 
-			var vertex = new THREE.RenderableVertex();
+			var vertex = new THREEW.RenderableVertex();
 			_vertexPool.push( vertex );
 			_vertexPoolLength ++;
 			_vertexCount ++;
@@ -976,7 +976,7 @@ THREE.Projector = function () {
 
 		if ( _faceCount === _facePoolLength ) {
 
-			var face = new THREE.RenderableFace();
+			var face = new THREEW.RenderableFace();
 			_facePool.push( face );
 			_facePoolLength ++;
 			_faceCount ++;
@@ -993,7 +993,7 @@ THREE.Projector = function () {
 
 		if ( _lineCount === _linePoolLength ) {
 
-			var line = new THREE.RenderableLine();
+			var line = new THREEW.RenderableLine();
 			_linePool.push( line );
 			_linePoolLength ++;
 			_lineCount ++;
@@ -1009,7 +1009,7 @@ THREE.Projector = function () {
 
 		if ( _spriteCount === _spritePoolLength ) {
 
-			var sprite = new THREE.RenderableSprite();
+			var sprite = new THREEW.RenderableSprite();
 			_spritePool.push( sprite );
 			_spritePoolLength ++;
 			_spriteCount ++;

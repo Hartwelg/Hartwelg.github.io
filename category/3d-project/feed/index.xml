@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.7.1</generator>
+	<generator>https://wordpress.org/?v=5.7.2</generator>
 
 <image>
 	<url>/wp-content/uploads/2020/10/MyLogo-150x103.png</url>
@@ -41,7 +41,7 @@
 <div class="wp-block-columns">
 <div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:500px;max-height:500px;">
 		<div class="woo3dv-canvas-wrapper">
-			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="500" height="500"></canvas>
+			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="500" height="500"></canvas>
 			<div id="woo3dv-file-loading">
 				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
@@ -84,15 +84,15 @@
 	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
 	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
 
-	<input type="hidden" id="woo3dv_show_light_source1" value="">
-	<input type="hidden" id="woo3dv_show_light_source2" value="">
-	<input type="hidden" id="woo3dv_show_light_source3" value="">
-	<input type="hidden" id="woo3dv_show_light_source4" value="">
-	<input type="hidden" id="woo3dv_show_light_source5" value="">
-	<input type="hidden" id="woo3dv_show_light_source6" value="">
-	<input type="hidden" id="woo3dv_show_light_source7" value="">
-	<input type="hidden" id="woo3dv_show_light_source8" value="">
-	<input type="hidden" id="woo3dv_show_light_source9" value="">
+	<input type="hidden" id="woo3dv_show_light_source1" value="off">
+	<input type="hidden" id="woo3dv_show_light_source2" value="on">
+	<input type="hidden" id="woo3dv_show_light_source3" value="off">
+	<input type="hidden" id="woo3dv_show_light_source4" value="off">
+	<input type="hidden" id="woo3dv_show_light_source5" value="off">
+	<input type="hidden" id="woo3dv_show_light_source6" value="on">
+	<input type="hidden" id="woo3dv_show_light_source7" value="off">
+	<input type="hidden" id="woo3dv_show_light_source8" value="off">
+	<input type="hidden" id="woo3dv_show_light_source9" value="off">
 
 
 
@@ -113,6 +113,7 @@
 	<input type="hidden" id="woo3dv_show_ground"  value="on" />
 	<input type="hidden" id="woo3dv_show_shadow"  value="off" />
 	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_background_transparency"  value="off" />
 	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
 	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
 	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
@@ -150,7 +151,7 @@
 <div class="wp-block-columns">
 <div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:500px;max-height:500px;">
 		<div class="woo3dv-canvas-wrapper">
-			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="500" height="500"></canvas>
+			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="500" height="500"></canvas>
 			<div id="woo3dv-file-loading">
 				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
@@ -193,15 +194,15 @@
 	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
 	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
 
-	<input type="hidden" id="woo3dv_show_light_source1" value="">
-	<input type="hidden" id="woo3dv_show_light_source2" value="">
-	<input type="hidden" id="woo3dv_show_light_source3" value="">
-	<input type="hidden" id="woo3dv_show_light_source4" value="">
-	<input type="hidden" id="woo3dv_show_light_source5" value="">
-	<input type="hidden" id="woo3dv_show_light_source6" value="">
-	<input type="hidden" id="woo3dv_show_light_source7" value="">
-	<input type="hidden" id="woo3dv_show_light_source8" value="">
-	<input type="hidden" id="woo3dv_show_light_source9" value="">
+	<input type="hidden" id="woo3dv_show_light_source1" value="off">
+	<input type="hidden" id="woo3dv_show_light_source2" value="on">
+	<input type="hidden" id="woo3dv_show_light_source3" value="off">
+	<input type="hidden" id="woo3dv_show_light_source4" value="off">
+	<input type="hidden" id="woo3dv_show_light_source5" value="off">
+	<input type="hidden" id="woo3dv_show_light_source6" value="on">
+	<input type="hidden" id="woo3dv_show_light_source7" value="off">
+	<input type="hidden" id="woo3dv_show_light_source8" value="off">
+	<input type="hidden" id="woo3dv_show_light_source9" value="off">
 
 
 
@@ -222,6 +223,7 @@
 	<input type="hidden" id="woo3dv_show_ground"  value="on" />
 	<input type="hidden" id="woo3dv_show_shadow"  value="off" />
 	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_background_transparency"  value="off" />
 	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
 	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
 	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
@@ -259,7 +261,7 @@
 <div class="wp-block-columns">
 <div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:500px;max-height:500px;">
 		<div class="woo3dv-canvas-wrapper">
-			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="500" height="500"></canvas>
+			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="500" height="500"></canvas>
 			<div id="woo3dv-file-loading">
 				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
@@ -302,15 +304,15 @@
 	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
 	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
 
-	<input type="hidden" id="woo3dv_show_light_source1" value="">
-	<input type="hidden" id="woo3dv_show_light_source2" value="">
-	<input type="hidden" id="woo3dv_show_light_source3" value="">
-	<input type="hidden" id="woo3dv_show_light_source4" value="">
-	<input type="hidden" id="woo3dv_show_light_source5" value="">
-	<input type="hidden" id="woo3dv_show_light_source6" value="">
-	<input type="hidden" id="woo3dv_show_light_source7" value="">
-	<input type="hidden" id="woo3dv_show_light_source8" value="">
-	<input type="hidden" id="woo3dv_show_light_source9" value="">
+	<input type="hidden" id="woo3dv_show_light_source1" value="off">
+	<input type="hidden" id="woo3dv_show_light_source2" value="on">
+	<input type="hidden" id="woo3dv_show_light_source3" value="off">
+	<input type="hidden" id="woo3dv_show_light_source4" value="off">
+	<input type="hidden" id="woo3dv_show_light_source5" value="off">
+	<input type="hidden" id="woo3dv_show_light_source6" value="on">
+	<input type="hidden" id="woo3dv_show_light_source7" value="off">
+	<input type="hidden" id="woo3dv_show_light_source8" value="off">
+	<input type="hidden" id="woo3dv_show_light_source9" value="off">
 
 
 
@@ -331,6 +333,7 @@
 	<input type="hidden" id="woo3dv_show_ground"  value="on" />
 	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
 	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_background_transparency"  value="off" />
 	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
 	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
 	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
@@ -368,7 +371,7 @@
 <div class="wp-block-columns">
 <div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:800px;max-height:800px;">
 		<div class="woo3dv-canvas-wrapper">
-			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="800" height="800"></canvas>
+			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="800" height="800"></canvas>
 			<div id="woo3dv-file-loading">
 				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
@@ -411,15 +414,15 @@
 	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
 	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
 
-	<input type="hidden" id="woo3dv_show_light_source1" value="">
-	<input type="hidden" id="woo3dv_show_light_source2" value="">
-	<input type="hidden" id="woo3dv_show_light_source3" value="">
-	<input type="hidden" id="woo3dv_show_light_source4" value="">
-	<input type="hidden" id="woo3dv_show_light_source5" value="">
-	<input type="hidden" id="woo3dv_show_light_source6" value="">
-	<input type="hidden" id="woo3dv_show_light_source7" value="">
-	<input type="hidden" id="woo3dv_show_light_source8" value="">
-	<input type="hidden" id="woo3dv_show_light_source9" value="">
+	<input type="hidden" id="woo3dv_show_light_source1" value="off">
+	<input type="hidden" id="woo3dv_show_light_source2" value="on">
+	<input type="hidden" id="woo3dv_show_light_source3" value="off">
+	<input type="hidden" id="woo3dv_show_light_source4" value="off">
+	<input type="hidden" id="woo3dv_show_light_source5" value="off">
+	<input type="hidden" id="woo3dv_show_light_source6" value="on">
+	<input type="hidden" id="woo3dv_show_light_source7" value="off">
+	<input type="hidden" id="woo3dv_show_light_source8" value="off">
+	<input type="hidden" id="woo3dv_show_light_source9" value="off">
 
 
 
@@ -440,6 +443,7 @@
 	<input type="hidden" id="woo3dv_show_ground"  value="on" />
 	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
 	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_background_transparency"  value="off" />
 	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
 	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
 	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
@@ -473,7 +477,7 @@
 <div class="wp-block-columns">
 <div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:800px;max-height:800px;">
 		<div class="woo3dv-canvas-wrapper">
-			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="800" height="800"></canvas>
+			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="800" height="800"></canvas>
 			<div id="woo3dv-file-loading">
 				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
@@ -516,15 +520,15 @@
 	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
 	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
 
-	<input type="hidden" id="woo3dv_show_light_source1" value="">
-	<input type="hidden" id="woo3dv_show_light_source2" value="">
-	<input type="hidden" id="woo3dv_show_light_source3" value="">
-	<input type="hidden" id="woo3dv_show_light_source4" value="">
-	<input type="hidden" id="woo3dv_show_light_source5" value="">
-	<input type="hidden" id="woo3dv_show_light_source6" value="">
-	<input type="hidden" id="woo3dv_show_light_source7" value="">
-	<input type="hidden" id="woo3dv_show_light_source8" value="">
-	<input type="hidden" id="woo3dv_show_light_source9" value="">
+	<input type="hidden" id="woo3dv_show_light_source1" value="off">
+	<input type="hidden" id="woo3dv_show_light_source2" value="on">
+	<input type="hidden" id="woo3dv_show_light_source3" value="off">
+	<input type="hidden" id="woo3dv_show_light_source4" value="off">
+	<input type="hidden" id="woo3dv_show_light_source5" value="off">
+	<input type="hidden" id="woo3dv_show_light_source6" value="on">
+	<input type="hidden" id="woo3dv_show_light_source7" value="off">
+	<input type="hidden" id="woo3dv_show_light_source8" value="off">
+	<input type="hidden" id="woo3dv_show_light_source9" value="off">
 
 
 
@@ -545,6 +549,7 @@
 	<input type="hidden" id="woo3dv_show_ground"  value="on" />
 	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
 	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_background_transparency"  value="off" />
 	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
 	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
 	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
@@ -582,7 +587,7 @@
 <div class="wp-block-columns">
 <div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:750px;max-height:750px;">
 		<div class="woo3dv-canvas-wrapper">
-			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="750" height="750"></canvas>
+			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="750" height="750"></canvas>
 			<div id="woo3dv-file-loading">
 				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
@@ -625,15 +630,15 @@
 	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
 	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
 
-	<input type="hidden" id="woo3dv_show_light_source1" value="">
-	<input type="hidden" id="woo3dv_show_light_source2" value="">
-	<input type="hidden" id="woo3dv_show_light_source3" value="">
-	<input type="hidden" id="woo3dv_show_light_source4" value="">
-	<input type="hidden" id="woo3dv_show_light_source5" value="">
-	<input type="hidden" id="woo3dv_show_light_source6" value="">
-	<input type="hidden" id="woo3dv_show_light_source7" value="">
-	<input type="hidden" id="woo3dv_show_light_source8" value="">
-	<input type="hidden" id="woo3dv_show_light_source9" value="">
+	<input type="hidden" id="woo3dv_show_light_source1" value="off">
+	<input type="hidden" id="woo3dv_show_light_source2" value="on">
+	<input type="hidden" id="woo3dv_show_light_source3" value="off">
+	<input type="hidden" id="woo3dv_show_light_source4" value="off">
+	<input type="hidden" id="woo3dv_show_light_source5" value="off">
+	<input type="hidden" id="woo3dv_show_light_source6" value="on">
+	<input type="hidden" id="woo3dv_show_light_source7" value="off">
+	<input type="hidden" id="woo3dv_show_light_source8" value="off">
+	<input type="hidden" id="woo3dv_show_light_source9" value="off">
 
 
 
@@ -654,6 +659,7 @@
 	<input type="hidden" id="woo3dv_show_ground"  value="on" />
 	<input type="hidden" id="woo3dv_show_shadow"  value="on" />
 	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_background_transparency"  value="off" />
 	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
 	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
 	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
@@ -691,7 +697,7 @@
 <div class="wp-block-columns">
 <div class="wp-block-column" style="flex-basis:66.66%">	<div id="woo3dv-viewer" style="max-width:750px;max-height:750px;">
 		<div class="woo3dv-canvas-wrapper">
-			<canvas id="woo3dv-cv" class="woo3dv-canvas" width="750" height="750"></canvas>
+			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="750" height="750"></canvas>
 			<div id="woo3dv-file-loading">
 				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
@@ -734,15 +740,15 @@
 	<input type="hidden" id="woo3dv_model_rotation_y" value="0">
 	<input type="hidden" id="woo3dv_model_rotation_z" value="0">
 
-	<input type="hidden" id="woo3dv_show_light_source1" value="">
-	<input type="hidden" id="woo3dv_show_light_source2" value="">
-	<input type="hidden" id="woo3dv_show_light_source3" value="">
-	<input type="hidden" id="woo3dv_show_light_source4" value="">
-	<input type="hidden" id="woo3dv_show_light_source5" value="">
-	<input type="hidden" id="woo3dv_show_light_source6" value="">
-	<input type="hidden" id="woo3dv_show_light_source7" value="">
-	<input type="hidden" id="woo3dv_show_light_source8" value="">
-	<input type="hidden" id="woo3dv_show_light_source9" value="">
+	<input type="hidden" id="woo3dv_show_light_source1" value="off">
+	<input type="hidden" id="woo3dv_show_light_source2" value="on">
+	<input type="hidden" id="woo3dv_show_light_source3" value="off">
+	<input type="hidden" id="woo3dv_show_light_source4" value="off">
+	<input type="hidden" id="woo3dv_show_light_source5" value="off">
+	<input type="hidden" id="woo3dv_show_light_source6" value="on">
+	<input type="hidden" id="woo3dv_show_light_source7" value="off">
+	<input type="hidden" id="woo3dv_show_light_source8" value="off">
+	<input type="hidden" id="woo3dv_show_light_source9" value="off">
 
 
 
@@ -763,6 +769,7 @@
 	<input type="hidden" id="woo3dv_show_ground"  value="on" />
 	<input type="hidden" id="woo3dv_show_shadow"  value="off" />
 	<input type="hidden" id="woo3dv_background1"  value="0x191919" />
+	<input type="hidden" id="woo3dv_background_transparency"  value="off" />
 	<input type="hidden" id="woo3dv_ground_mirror"  value="off" />
 	<input type="hidden" id="woo3dv_fog_color"  value="0xFFFFFF" />
 	<input type="hidden" id="woo3dv_grid_color"  value="0x898989" />
