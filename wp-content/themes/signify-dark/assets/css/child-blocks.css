@@ -14,64 +14,63 @@ Description: Used to style Gutenberg Blocks.
 6.0 Blocks - Colors
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-1.0 Blocks - General Styles
---------------------------------------------------------------*/
 
- th, 
- .mce-item-table th, 
- td, 
- .mce-item-table td {
- 	border-bottom: 0;
- }
-
- tbody tr:last-child th, 
- tbody tr:last-child td {
- 	border-bottom: 1px solid;
- }
-
-/*--------------------------------------------------------------
-6.0 Blocks - Colors
---------------------------------------------------------------*/
-
-.wp-block-button .wp-block-button__link,
-.wp-block-button .more-link,
-.wp-block-button .button,
-.is-style-fill.wp-block-button .wp-block-button__link,
-.is-style-fill.wp-block-button .wp-block-button__link,
-.is-style-fill.wp-block-button .more-link,
-.is-style-fill.wp-block-button .more-link,
-.is-style-fill.wp-block-button .button,
-.is-style-fill.wp-block-button .button {
-	background-color: #008ec2;
-	color: #fff;
+/* Secondary Background Color */
+.wp-block-pullquote.is-style-solid-color,
+figure.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1),
+.wp-block-pullquote.is-style-solid-color,
+figure.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
+    background-color: #222;
 }
 
-.is-style-fill.wp-block-button .wp-block-button__link:hover,
-.is-style-fill.wp-block-button .wp-block-button__link:focus,
-.is-style-fill.wp-block-button .more-link:hover,
-.is-style-fill.wp-block-button .more-link:focus,
-.is-style-fill.wp-block-button .button:hover,
-.is-style-fill.wp-block-button .button:focus {
-	background-color: #fff;
-	color: #000;
-	border-color: #e6e6e6;
+/* Main Text Color */
+.singular-content-wrap .entry-content a:not(.more-link):not(.button):not(button):not(.wp-block-button__link):not(.wp-playlist-caption):hover,
+.singular-content-wrap .entry-content a:not(.more-link):not(.button):not(button):not(.wp-block-button__link):not(.wp-playlist-caption):focus,
+.singular-content-wrap .entry-summary a:not(.more-link):not(.button):not(button):not(.wp-block-button__link):not(.wp-playlist-caption):hover,
+.singular-content-wrap .entry-summary a:not(.more-link):not(.button):not(button):not(.wp-block-button__link):not(.wp-playlist-caption):focus,
+.is-style-outline.wp-block-button .wp-block-button__link {
+    color: #999;
 }
 
-.is-style-outline.wp-block-button .wp-block-button__link,
-.is-style-outline.wp-block-button .more-link,
-.is-style-outline.wp-block-button .button {
-	border-color: #008ec2;
-	background-color: transparent;
-	color: #fff;
+/* Page Post Content Link Color */
+.singular-content-wrap .entry-content a:not(.more-link):not(.button):not(button):not(.wp-block-button__link):not(.wp-playlist-caption),
+.singular-content-wrap .entry-summary a:not(.more-link):not(.button):not(button):not(.wp-block-button__link):not(.wp-playlist-caption) {
+    color: #db4f3d;
 }
 
+/* Button Background Color */
+.wp-block-button__link {
+    background-color: #db4f3d;
+}
+
+.is-style-outline.wp-block-button .wp-block-button__link {
+    border-color: #db4f3d;
+}
+
+/* Button Hover Text Color */
 .is-style-outline.wp-block-button .wp-block-button__link:hover,
-.is-style-outline.wp-block-button .wp-block-button__link:focus,
-.is-style-outline.wp-block-button .more-link:hover,
-.is-style-outline.wp-block-button .more-link:focus,
-.is-style-outline.wp-block-button .button:hover,
-.is-style-outline.wp-block-button .button:focus {
-	background-color: #008ec2;
-	color: #fff;
+.is-style-outline.wp-block-button .wp-block-button__link:focus {
+    color: #db4f3d;
+}
+
+/* Button Hover Background Color */
+.wp-block-button__link:hover,
+.wp-block-button__link:focus,
+.is-style-outline.wp-block-button .wp-block-button__link:hover,
+.is-style-outline.wp-block-button .wp-block-button__link:focus {
+    background-color: #fff;
+}
+
+/* Border Color */
+.wp-block-table table,
+.wp-block-table caption,
+.wp-block-table thead,
+.wp-block-table th,
+.wp-block-table td,
+.wp-block-table.is-style-stripes td,
+.wp-block-table.is-style-stripes th,
+.wp-block-table tr:first-child td,
+tbody tr:last-child th,
+tbody tr:last-child td {
+    border-color: #2f2f2f;
 }

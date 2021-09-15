@@ -564,7 +564,7 @@ function woo3dvModelOnLoad(object) {
 			var planeGeo = new THREEW.PlaneBufferGeometry( plane_width, plane_width );
 			woo3dv.groundMirror = new THREEW.Mirror( woo3dv.renderer, woo3dv.camera, { clipBias: 0.003, textureWidth: canvas_width, textureHeight: canvas_height, color: 0xaaaaaa } );
 			var mirrorMesh = new THREEW.Mesh( planeGeo, woo3dv.groundMirror.material );
-			mirrorMesh.position.y = woo3dv.boundingBox.min.z-1;
+			mirrorMesh.position.y = woo3dv.boundingBox.min.z-camera_near;
 			mirrorMesh.add( woo3dv.groundMirror );
 			mirrorMesh.rotateX( - Math.PI / 2 );
 			mirrorMesh.name = 'mirror';
