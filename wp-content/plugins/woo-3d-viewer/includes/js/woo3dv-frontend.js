@@ -1161,7 +1161,7 @@ function woo3dvToggleWireframe() {
 	if (Detector.webgl) {
 
 		if (woo3dv.model_mesh && typeof(woo3dv.model_mesh.material)!=='undefined') {
-			woo3dv.model_mesh.material.wireframe = woo3dv.model_mesh.material.wireframe;
+			woo3dv.model_mesh.material.wireframe = !woo3dv.model_mesh.material.wireframe;
 		}
 
 		if (woo3dv.object && woo3dv.object.type=='Group') {

@@ -18,7 +18,7 @@
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
-	<generator>https://wordpress.org/?v=5.8.1</generator>
+	<generator>https://wordpress.org/?v=5.8.2</generator>
 
 <image>
 	<url>/wp-content/uploads/2020/10/MyLogo-150x103.png</url>
@@ -43,7 +43,7 @@
 		<div class="woo3dv-canvas-wrapper">
 			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="500" height="500"></canvas>
 			<div id="woo3dv-file-loading">
-				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+				<img alt="Loading file" src="http://10.0.0.23/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
 		</div>
 
@@ -70,12 +70,12 @@
 	</div>
 		</div>
 
-	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2021/01/arachnid-lamp-stand.stl">
+	<input type="hidden" id="woo3dv_model_url" value="http://10.0.0.23/wp-content/uploads/2021/01/arachnid-lamp-stand.stl">
 	<input type="hidden" id="woo3dv_model_mtl" value="">
 	<input type="hidden" id="woo3dv_model_gif" value="">
 
 
-	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2021/01/" />
+	<input type="hidden" id="woo3dv_upload_url" value="http://10.0.0.23/wp-content/uploads/2021/01/" />
 	<input type="hidden" id="woo3dv_model_color" value="0x8e0505">
 	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
 	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
@@ -153,7 +153,7 @@
 		<div class="woo3dv-canvas-wrapper">
 			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="500" height="500"></canvas>
 			<div id="woo3dv-file-loading">
-				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+				<img alt="Loading file" src="http://10.0.0.23/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
 		</div>
 
@@ -180,12 +180,12 @@
 	</div>
 		</div>
 
-	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2021/01/KnittingMachineYarnHolder.stl">
+	<input type="hidden" id="woo3dv_model_url" value="http://10.0.0.23/wp-content/uploads/2021/01/KnittingMachineYarnHolder.stl">
 	<input type="hidden" id="woo3dv_model_mtl" value="">
 	<input type="hidden" id="woo3dv_model_gif" value="">
 
 
-	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2021/01/" />
+	<input type="hidden" id="woo3dv_upload_url" value="http://10.0.0.23/wp-content/uploads/2021/01/" />
 	<input type="hidden" id="woo3dv_model_color" value="0x7c1818">
 	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
 	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
@@ -263,7 +263,7 @@
 		<div class="woo3dv-canvas-wrapper">
 			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="500" height="500"></canvas>
 			<div id="woo3dv-file-loading">
-				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+				<img alt="Loading file" src="http://10.0.0.23/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
 		</div>
 
@@ -290,12 +290,12 @@
 	</div>
 		</div>
 
-	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2021/01/Sandpaper-stick.stl">
+	<input type="hidden" id="woo3dv_model_url" value="http://10.0.0.23/wp-content/uploads/2021/01/Sandpaper-stick.stl">
 	<input type="hidden" id="woo3dv_model_mtl" value="">
 	<input type="hidden" id="woo3dv_model_gif" value="">
 
 
-	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2021/01/" />
+	<input type="hidden" id="woo3dv_upload_url" value="http://10.0.0.23/wp-content/uploads/2021/01/" />
 	<input type="hidden" id="woo3dv_model_color" value="0xf20000">
 	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
 	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
@@ -373,7 +373,7 @@
 		<div class="woo3dv-canvas-wrapper">
 			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="800" height="800"></canvas>
 			<div id="woo3dv-file-loading">
-				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+				<img alt="Loading file" src="http://10.0.0.23/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
 		</div>
 
@@ -400,12 +400,12 @@
 	</div>
 		</div>
 
-	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/12/1607512293_tinker.obj">
+	<input type="hidden" id="woo3dv_model_url" value="http://10.0.0.23/wp-content/uploads/2020/12/1607512293_tinker.obj">
 	<input type="hidden" id="woo3dv_model_mtl" value="1607512293_obj.mtl">
 	<input type="hidden" id="woo3dv_model_gif" value="">
 
 
-	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/12/" />
+	<input type="hidden" id="woo3dv_upload_url" value="http://10.0.0.23/wp-content/uploads/2020/12/" />
 	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
 	<input type="hidden" id="woo3dv_model_shininess" value="wood">
 	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
@@ -479,7 +479,7 @@
 		<div class="woo3dv-canvas-wrapper">
 			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="800" height="800"></canvas>
 			<div id="woo3dv-file-loading">
-				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+				<img alt="Loading file" src="http://10.0.0.23/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
 		</div>
 
@@ -506,12 +506,12 @@
 	</div>
 		</div>
 
-	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/12/Sharpening-Stone-Box.stl">
+	<input type="hidden" id="woo3dv_model_url" value="http://10.0.0.23/wp-content/uploads/2020/12/Sharpening-Stone-Box.stl">
 	<input type="hidden" id="woo3dv_model_mtl" value="">
 	<input type="hidden" id="woo3dv_model_gif" value="">
 
 
-	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/12/" />
+	<input type="hidden" id="woo3dv_upload_url" value="http://10.0.0.23/wp-content/uploads/2020/12/" />
 	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
 	<input type="hidden" id="woo3dv_model_shininess" value="wood">
 	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
@@ -589,7 +589,7 @@
 		<div class="woo3dv-canvas-wrapper">
 			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="750" height="750"></canvas>
 			<div id="woo3dv-file-loading">
-				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+				<img alt="Loading file" src="http://10.0.0.23/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
 		</div>
 
@@ -616,12 +616,12 @@
 	</div>
 		</div>
 
-	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/11/Nightstand1.stl">
+	<input type="hidden" id="woo3dv_model_url" value="http://10.0.0.23/wp-content/uploads/2020/11/Nightstand1.stl">
 	<input type="hidden" id="woo3dv_model_mtl" value="">
 	<input type="hidden" id="woo3dv_model_gif" value="">
 
 
-	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/11/" />
+	<input type="hidden" id="woo3dv_upload_url" value="http://10.0.0.23/wp-content/uploads/2020/11/" />
 	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
 	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
 	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
@@ -699,7 +699,7 @@
 		<div class="woo3dv-canvas-wrapper">
 			<canvas id="woo3dv-cv" class="woo3dv-canvas woo3dv-canvas-border" width="750" height="750"></canvas>
 			<div id="woo3dv-file-loading">
-				<img alt="Loading file" src="http://192.168.1.56/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
+				<img alt="Loading file" src="http://10.0.0.23/wp-content/plugins/woo-3d-viewer/images/ajax-loader.gif">
 			</div>
 		</div>
 
@@ -726,12 +726,12 @@
 	</div>
 		</div>
 
-	<input type="hidden" id="woo3dv_model_url" value="http://192.168.1.56/wp-content/uploads/2020/11/AnyConv.com__Box-with-lid.obj">
+	<input type="hidden" id="woo3dv_model_url" value="http://10.0.0.23/wp-content/uploads/2020/11/AnyConv.com__Box-with-lid.obj">
 	<input type="hidden" id="woo3dv_model_mtl" value="">
 	<input type="hidden" id="woo3dv_model_gif" value="">
 
 
-	<input type="hidden" id="woo3dv_upload_url" value="http://192.168.1.56/wp-content/uploads/2020/11/" />
+	<input type="hidden" id="woo3dv_upload_url" value="http://10.0.0.23/wp-content/uploads/2020/11/" />
 	<input type="hidden" id="woo3dv_model_color" value="0xdd9933">
 	<input type="hidden" id="woo3dv_model_shininess" value="plastic">
 	<input type="hidden" id="woo3dv_model_transparency" value="opaque">
