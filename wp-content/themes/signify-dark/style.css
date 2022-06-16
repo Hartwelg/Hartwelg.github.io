@@ -4,9 +4,9 @@ Theme URI: https://wenthemes.com/item/wordpress-themes/signify-dark/
 Author: WEN Themes
 Author URI: https://wenthemes.com/
 Description: Signify Dark is a free dark Blog and Corporate WordPress theme that is trendy, responsive, and dynamic. It is a child theme of Signify, a popular Corporate WordPress theme. Signify Dark inherits all the premium-like features and functionalities from its parent theme. However, the child theme comes with a dark color scheme. Dark color schemes are quite popular and trending nowadays on top charts as it is considered to be a bold design trend and also they’re easy on the eye. If you love dark theme for your blog or corporate site, Signify Dark is the one to go for. You will find features like Featured Content, Slider Options, Portfolio, Testimonials, Services, Hero Content, Header Media, Menu Options, and more in Signify Dark. With the awesome package full of features and a dark color scheme, Signify Dark will represent your site in an aesthetic manner. Your blog/corporate site will look absolutely gorgeous and professional across all screen sizes as well. Official Support Forum: https://themepalace.com/support-forum/ Full Demo: https://wenthemes.com/theme-demos/?demo=signify-dark
-Version: 2.0
-Requires at least: 5.5
-Tested up to: 5.8
+Version: 2.0.2
+Requires at least: 5.6
+Tested up to: 5.9
 Requires PHP: 5.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -87,6 +87,7 @@ ul.wc_payment_methods.payment_methods.methods li,
 .comment-respond,
 .widget_shopping_cart,
 pre,
+code,
 .widget .ui-tabs .ui-tabs-panel,
 select,
 .select2-container--default .select2-selection--single,

@@ -98,10 +98,11 @@ Description: Used to style Gutenberg Blocks.
 
 p.has-drop-cap:not(:focus)::first-letter {
 	float: left;
-	font-size: 80px;
-	font-size: 5rem;
+	font-size: 120px;
+	font-size: 7.5rem;
+	font-weight: 700;
 	line-height: 0.6;
-	margin: 7px 16px 7px -3px;
+	margin: 14px 16px 5px -3px;
 }
 
 /* Image */
@@ -212,18 +213,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	padding-right: 0;
 }
 
-.wp-block-quote p,
-.wp-block-pullquote.is-style-solid-color blockquote p,
-.wp-block-pullquote p {
-	margin-bottom: 21px;
-}
-
 .wp-block-quote cite,
 .wp-block-pullquote cite {
-	font-weight: 400;
-	text-transform: capitalize;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.615384615384615;
+	text-transform: none;
 }
 
 .wp-block-quote.is-style-large p {
@@ -235,6 +231,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 	font-size: 20px;
 	font-size: 1.25rem;
 	font-style: italic;
+	text-align: center;
 }
 
 .wp-block-quote.has-text-align-right,
@@ -429,7 +426,13 @@ figure.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
 .wp-block-code {
 	border: 0;
 	color: inherit;
-	padding: 1.75em;
+}
+
+.wp-block-code > code {
+	border: none;
+	color: inherit;
+	font-family: Inconsolata, monospace;
+	padding: 0;
 }
 
 .wp-block-code cite:before,
@@ -527,6 +530,7 @@ figure.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
 
 .wp-block-button .wp-block-button__link {
     border: 1px solid transparent;
+    border-radius: 0;
 	display: inline-block;
     font-size: 14px;
 	font-size: 0.875rem;

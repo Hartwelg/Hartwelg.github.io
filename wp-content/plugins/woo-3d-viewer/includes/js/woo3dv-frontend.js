@@ -17,6 +17,7 @@ woo3dv.font_size = 25;
 woo3dv.wireframe = false;
 woo3dv.vec = new THREEW.Vector3();
 woo3dv.product_offset_z = false;
+woo3dv.product_fullscreen = 0;
 
 jQuery(document).ready(function(){
 
@@ -111,6 +112,11 @@ function woo3dvViewerInit(model, mtl, ext) {
 	var woo3dv_canvas_width = jQuery('#woo3dv-cv').width()
 	var woo3dv_canvas_height = jQuery('#woo3dv-cv').height()
 
+	if (jQuery('div.product').length>0) {
+		woo3dv.product_width=woo3dv_canvas_width;
+		woo3dv.product_height=woo3dv_canvas_height;
+	}
+
 	woo3dv.current_model = model;
 	woo3dv.current_mtl = mtl;
 
@@ -118,9 +124,9 @@ function woo3dvViewerInit(model, mtl, ext) {
 
 	//3D Renderer
 	woo3dv.renderer = Detector.webgl? new THREEW.WebGLRenderer({ antialias: true, alpha: (woo3dv.background_transparency=='on' ? true : false), canvas: woo3dv_canvas, preserveDrawingBuffer: true }): new THREEW.CanvasRenderer({canvas: woo3dv_canvas});
-	if (this.woo3dv.background_transparency=='off') {
-		woo3dv.renderer.setClearColor( parseInt(woo3dv.background1, 16) );
-	}
+//	if (this.woo3dv.background_transparency=='off') {
+//		woo3dv.renderer.setClearColor( parseInt(woo3dv.background1, 16) );
+//	}
 //	woo3dv.renderer.setClearColor( parseInt(woo3dv.background1, 16) );
 	woo3dv.renderer.setPixelRatio( window.devicePixelRatio );
 	woo3dv.renderer.setSize( woo3dv_canvas_width, woo3dv_canvas_height );
@@ -152,7 +158,7 @@ function woo3dvViewerInit(model, mtl, ext) {
 
 	woo3dv.scene = new THREEW.Scene();
 
-	if (jQuery('#woo3dv_background1').val().length>0 && this.woo3dv.background_transparency=='off') {
+	if (jQuery('#woo3dv_background1').val().length>0 && woo3dv.background_transparency=='off') {
 		woo3dv.scene.background = new THREEW.Color(parseInt(jQuery('#woo3dv_background1').val().replace('#', '0x'), 16));
 	}
 
@@ -190,15 +196,26 @@ function woo3dvViewerInit(model, mtl, ext) {
 	woo3dv.controls = new THREEW.OrbitControls( woo3dv.camera, woo3dv.renderer.domElement );
 	if (woo3dv.auto_rotation=='on' && !(woo3dv.mobile_no_animation=='on' && woo3dvMobileCheck())) {
 		woo3dv.controls.autoRotate = true; 
+		woo3dv.controls.autoRotateSpeed = (woo3dv.auto_rotation_direction == 'ccw' ? -parseInt(woo3dv.auto_rotation_speed) : parseInt(woo3dv.auto_rotation_speed));
 	}
 
 	woo3dv.controls.addEventListener( 'start', function() {
 		woo3dv.controls.autoRotate = false;
 	});
 
-	if (woo3dv.enable_controls!='on') {
-		woo3dv.controls.enabled = false; 
+
+	if (woo3dv.enable_zoom!='on') {
+		woo3dv.controls.enableZoom = false; 
 	}
+
+	if (woo3dv.enable_pan!='on') {
+		woo3dv.controls.enablePan = false; 
+	}
+
+	if (woo3dv.enable_manual_rotation!='on') {
+		woo3dv.controls.enableRotate = false; 
+	}
+
 
 	if (ext=='stl') {
 		woo3dv.loader = new THREEW.STLLoader();
@@ -406,8 +423,9 @@ function woo3dvFitCameraToObject( camera, object, offset, controls ) {
         if ( controls ) {
     
             controls.target = center;
-        
-            controls.maxDistance = cameraToFarEdge * 2;
+            if (woo3dv.zoom_distance_max!='0') {
+            	controls.maxDistance = cameraToFarEdge * 2;
+            }
 	    if (typeof(controls.saveState)!='undefined')
 	            controls.saveState();
     
@@ -497,6 +515,17 @@ function woo3dvModelOnLoad(object) {
 //0xa0a0a0
 
 
+	//Zoom Distance
+	var zoom_distance_min = parseFloat(woo3dv.zoom_distance_min);
+	var zoom_distance_max = parseFloat(woo3dv.zoom_distance_max);
+
+	if (zoom_distance_min>0) {
+		woo3dv.controls.minDistance = (max_side / 100) * zoom_distance_min;
+	}
+
+	if (zoom_distance_max>0) {
+		woo3dv.controls.maxDistance = (max_side / 100) * zoom_distance_max;
+	}
 
 
 	//Camera
@@ -588,7 +617,7 @@ function woo3dvModelOnLoad(object) {
 //	}
 
 	//Grid
-	if (woo3dv.show_grid=='on' && woo3dv.grid_color.length>0 && this.woo3dv.background_transparency=='off') {
+	if (woo3dv.show_grid=='on' && woo3dv.grid_color.length>0 && woo3dv.background_transparency=='off') {
 		var size = plane_width/2, step = grid_step;
 		var grid_geometry = new THREEW.Geometry();
 		for ( var i = - size; i <= size; i += step ) {
@@ -652,7 +681,7 @@ function woo3dvCreateMaterial(model_shading) {
 	var shininess = woo3dvGetCurrentShininess(null);
 	var transparency = woo3dvGetCurrentTransparency(null);
 
-	color.offsetHSL(0, 0, -0.1);
+//	color.offsetHSL(0, 0, -0.1);
 //console.log(woo3dvMobileCheck());
 	if (Detector.webgl && !woo3dvMobileCheck()) {
 //	if (Detector.webgl) {
@@ -902,9 +931,21 @@ function woo3dvMakeShadow(directionalLight) {
 
 function woo3dvOnWindowResize() {
 
+	if (THREEx.FullScreen.activated()) {
+		woo3dv.product_fullscreen = 2;
+	}
+
+
 	if (jQuery('div.product').length>0) { //product page
 		var woo3dv_canvas_width = jQuery('#woo3dv-viewer').parent().width()
 		var woo3dv_canvas_height = jQuery('#woo3dv-viewer').width()
+
+
+		if (woo3dv.product_fullscreen && !THREEx.FullScreen.activated() && typeof(woo3dv.product_width)!='undefined' && typeof(woo3dv.product_height)!='undefined') { //cancelling fullscreen
+			woo3dv.product_fullscreen--;
+			var woo3dv_canvas_width = parseFloat(woo3dv.product_width)
+			var woo3dv_canvas_height = parseFloat(woo3dv.product_height)
+		}
 	}
 	else {
 		var woo3dv_canvas_width = jQuery('#woo3dv-viewer').width()
@@ -968,7 +1009,7 @@ function woo3dvChangeModelColor(model_color) {
 	if (!woo3dv.model_mesh) return;
 	model_color = model_color.replace('#', '0x');
 	woo3dv.model_mesh.material.color.set(parseInt(model_color, 16));
-	woo3dv.model_mesh.material.color.offsetHSL(0, 0, -0.1);
+//	woo3dv.model_mesh.material.color.offsetHSL(0, 0, -0.1);
 	if (Detector.webgl) {
 		var model_shininess = woo3dvGetCurrentShininess();
 		woo3dv.model_mesh.material.shininess = model_shininess.shininess;
@@ -1193,6 +1234,7 @@ function woo3dvZoomOut() {
 
 function woo3dvToggleRotation() {
 	woo3dv.controls.autoRotate = !woo3dv.controls.autoRotate;
+	woo3dv.controls.autoRotateSpeed = (woo3dv.auto_rotation_direction == 'ccw' ? -parseInt(woo3dv.auto_rotation_speed) : parseInt(woo3dv.auto_rotation_speed));
 }
 
 function woo3dvScreenshot() {

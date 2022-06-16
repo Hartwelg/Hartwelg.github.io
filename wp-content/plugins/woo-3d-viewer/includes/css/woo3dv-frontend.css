@@ -194,6 +194,11 @@
 	background: rgba(255,255,255,0.5);
 }
 
+.woo3dv-view3d-button img {
+	max-width:fit-content;
+	max-height:fit-content;
+}
+
 .woo3dv-model-controls-list a {
     outline: none !important;
 }
