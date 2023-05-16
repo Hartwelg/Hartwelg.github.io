@@ -51,6 +51,7 @@
 
 .woo3dv-canvas-borderless {
 	border: none;
+	outline: none;
 }
 
 
@@ -209,4 +210,8 @@
 
 a.woo3dv-view3d-button {
     z-index: 999;
+}
+
+.woo3dv-thumbnail-img {
+	min-width:50px;
 }

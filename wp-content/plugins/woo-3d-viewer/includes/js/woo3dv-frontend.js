@@ -101,6 +101,8 @@ function woo3dvInit3D() {
 	woo3dvViewerInit(woo3dv.model_url, woo3dv.model_mtl, model_type);
 
 	woo3dvAnimate();
+
+	woo3dvBindSubmit();
 }
 
 
@@ -920,6 +922,7 @@ function woo3dvMakeShadow(directionalLight) {
 	directionalLight.shadow.mapSize.width = 2048;
 	directionalLight.shadow.mapSize.height = 2048;
 	directionalLight.shadow.bias = bias;
+	directionalLight.shadow.radius = woo3dv.shadow_softness;
 
 	if (directionalLight.shadow.map) {
 		directionalLight.shadow.map.dispose(); 
@@ -1241,4 +1244,17 @@ function woo3dvScreenshot() {
 	var file_name = woo3dv.model_url.split('/').reverse()[0]+'.png';
 	document.getElementById("woo3dv-screenshot").download = file_name;
 	document.getElementById("woo3dv-screenshot").href = document.getElementById("woo3dv-cv").toDataURL("image/png").replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+}
+
+function woo3dvBindSubmit() {
+	jQuery( "form.cart" ).on( "submit", function(e) {
+		if (woo3dv.override_cart_thumbnail=='on') {
+			woo3dvSetThumbnail();
+		}
+	})
+}
+
+function woo3dvSetThumbnail () {
+	var thumbnail_data = jQuery('#woo3dv-cv').first().get(0).toDataURL().replace('data:image/png;base64,','');
+	jQuery('#woo3dv_thumbnail').val(thumbnail_data);
 }
